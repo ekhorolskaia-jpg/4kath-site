@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4Kath Studio — sitios web desde 72 horas</title>
+<meta name="description" content="Sitios web hechos por personas a precio fijo: landing page en 72 horas desde $420, sitio multipágina en 7 días, tienda online en 2 semanas.">
+<meta property="og:title" content="4Kath Studio — sitios web desde 72 horas">
+<meta property="og:description" content="Sitios web hechos por personas a precio fijo: landing page en 72 horas desde $420, sitio multipágina en 7 días, tienda online en 2 semanas.">
+<meta property="og:image" content="https://4kath.com/assets/img/case-huawei.jpg">
+<link rel="alternate" hreflang="en" href="https://4kath.com/">
+<link rel="alternate" hreflang="ru" href="https://4kath.com/ru.html">
+<link rel="alternate" hreflang="es" href="https://4kath.com/es.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&amp;display=swap">
+<style>
+@font-face{font-family:Evolventa;font-weight:400;font-display:swap;src:url(assets/fonts/evolventa-regular.woff) format("woff")}
+@font-face{font-family:Evolventa;font-weight:700;font-display:swap;src:url(assets/fonts/evolventa-bold.woff) format("woff")}
+body{margin:0}
+a{color:#060A1A}a:hover{color:#2F3CFF}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700;font-size:18px}summary::-webkit-details-marker{display:none}
+.wrap{max-width:1200px;margin:0 auto;padding:112px 24px 0}
+.c{text-align:center}
+.h2{font-family:var(--hf);font-weight:700;letter-spacing:-.035em;line-height:1.04;font-size:clamp(32px,4.8vw,60px);margin:0}
+.h3{font-family:var(--hf);font-weight:700;letter-spacing:-.02em;line-height:1.2;font-size:21px;margin:0}
+.big{font-family:var(--hf);font-weight:700;letter-spacing:-.035em;line-height:1}
+.mut{color:#6B7083}
+.ac{color:var(--ac)}
+.sub{color:#6B7083;font-size:18px;max-width:620px;margin:16px auto 0}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;background:#FFFFFF;border:1px solid #E8E9F0;box-shadow:0 2px 6px rgba(6,10,26,.05)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ac)}
+.pill.t{background:#ECEEFF;border-color:#ECEEFF;box-shadow:none;color:#1B2180}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;padding:8px 26px;min-height:40px;border-radius:999px;font-weight:700}
+.btn.pri{background:var(--ac);color:#FFFFFF;box-shadow:0 4px 4px rgba(47,60,255,.08),0 12px 28px rgba(47,60,255,.35)}
+.btn.out{background:#FFFFFF;color:var(--ac);border:1.5px solid var(--ac)}
+.btn.gry{background:#F5F6FA;color:#060A1A}
+.btn.wht{background:#FFFFFF;color:#060A1A;box-shadow:0 12px 28px rgba(6,10,26,.2)}
+.arr{display:inline-flex;width:34px;height:34px;border-radius:50%;margin-right:-18px;align-items:center;justify-content:center;background:rgba(6,10,26,.22)}
+.wht .arr{background:var(--ac);color:#FFFFFF}
+.arr svg{width:14px;height:14px}
+svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.bd{background:#FFFFFF;border:1px solid #E8E9F0;border-radius:24px;box-sizing:border-box}
+.gr{background:#F5F6FA;border-radius:24px;box-sizing:border-box}
+.ph{background:#EEF0F7;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#6B7083;font-size:14px;text-align:center;padding:12px;box-sizing:border-box}
+.ic{display:inline-flex;flex:none;width:52px;height:52px;border-radius:16px;align-items:center;justify-content:center;background:#FFFFFF;color:var(--ac);box-shadow:0 1px 2px rgba(6,10,26,.06),0 10px 24px rgba(47,60,255,.16)}
+.ic svg{fill:none}
+svg.fi,.ic svg.fi{fill:currentColor;stroke:none}
+.ic.ln svg{fill:none}
+.dot{display:inline-flex;flex:none;width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;background:var(--ac);color:#FFFFFF;box-shadow:0 4px 10px rgba(47,60,255,.35)}
+.dot.x{background:#E8E9F0;color:#8A8FA3;box-shadow:none}
+.dot svg{width:12px;height:12px;stroke-width:2.2}
+.ln2{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid #E8E9F0}
+.ck{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;flex-grow:1;font-size:15px;font-weight:700}
+.ck li{position:relative;padding-left:30px}
+.ck li::after{content:"";position:absolute;left:4px;top:.3em;width:11px;height:6px;border-left:2.5px solid var(--ac);border-bottom:2.5px solid var(--ac);transform:rotate(-45deg)}
+.fl{position:absolute;box-shadow:0 14px 30px rgba(20,24,80,.22)}
+.bg{display:none;position:relative}
+.bg summary{width:44px;height:44px;justify-content:center;border-radius:50%;background:#F5F6FA}
+.bm{position:absolute;right:0;top:52px;z-index:5;min-width:220px;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E8E9F0;border-radius:20px;padding:12px;box-shadow:0 14px 36px rgba(20,24,80,.12)}
+.bm a{padding:12px;text-decoration:none;font-weight:700}
+@media (max-width:767px){.dn{display:none!important}.bg{display:block}}
+.stage{position:relative;container-type:inline-size;width:100%;max-width:1100px;margin:72px auto 0;aspect-ratio:1100/440;text-align:left;line-height:1.2}
+.stage>*{position:absolute;box-sizing:border-box}
+.sc{background:#ECEDF2;border-radius:2cqw;padding:1.8cqw;width:18cqw;box-shadow:0 1.4cqw 3.6cqw rgba(20,24,80,.2)}
+.sc .l{font-size:1.4cqw;font-weight:700}
+.sc .n{font-size:3.5cqw;margin:.9cqw 0 .6cqw}
+.sc .p{font-size:1.4cqw;color:#5A5F72}
+.chip{width:5cqw;height:5cqw;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 1.2cqw 2.8cqw rgba(20,24,80,.22)}
+.chip svg{width:2.4cqw;height:2.4cqw}
+.br{left:24cqw;top:2cqw;width:52cqw;background:#FFFFFF;border-radius:2.6cqw;padding:1.5cqw;box-shadow:0 2.8cqw 6.4cqw rgba(20,24,80,.3)}
+.bx{position:relative;height:29.9cqw;border-radius:1.5cqw;background:#F3F4F6;overflow:hidden;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#0B0B0C;line-height:1.2}
+.bx>*{position:absolute}
+.bx .hh{font-family:Unbounded,sans-serif;font-weight:700;font-size:3cqw;line-height:1.12;letter-spacing:-.02em}
+.bx .bt{height:1.9cqw;border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:.52cqw;box-sizing:border-box;animation:kbb 10s ease-in-out infinite}
+.bx .pl{border-radius:99px;padding:.4cqw .8cqw;font-size:.68cqw;white-space:nowrap;z-index:2;box-shadow:0 .3cqw .8cqw rgba(11,11,12,.08);animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.cur{position:absolute;left:1.5cqw;top:1.5cqw;z-index:4;display:flex;align-items:flex-start;animation:kcur 10s ease-in-out infinite}
+.cur svg{width:2.6cqw;height:2.6cqw;fill:var(--ac);stroke:#FFFFFF;stroke-width:1.5}
+.cur b{font-family:Evolventa,sans-serif;font-weight:700;line-height:1.2;margin:2cqw 0 0 -.4cqw;background:var(--ac);color:#FFFFFF;font-size:1.2cqw;padding:.3cqw .8cqw;border-radius:99px;white-space:nowrap}
+@keyframes kcur{0%{transform:translate(36cqw,15cqw)}9%,12%{transform:translate(25.9cqw,23cqw)}26%,29%{transform:translate(31.9cqw,20cqw)}39%,42%{transform:translate(43.9cqw,13.8cqw)}56%,59%{transform:translate(40.9cqw,22.8cqw)}68%,71%{transform:translate(7cqw,20.3cqw)}82%,86%{transform:translate(14cqw,20.3cqw)}94%,100%{transform:translate(36cqw,15cqw)}}
+@keyframes kp1{0%,12%{transform:none}26%,88%{transform:translate(6cqw,-3cqw)}96%,100%{transform:none}}
+@keyframes kp2{0%,42%{transform:none}56%,88%{transform:translate(-3cqw,9cqw)}96%,100%{transform:none}}
+@keyframes kbb{0%,71%{transform:none}82%,88%{transform:translateX(7cqw)}96%,100%{transform:none}}
+@keyframes kbw{0%,74%{transform:none}84%,88%{transform:translateX(-9.2cqw)}96%,100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.cur,.bx .pl,.bx .bt{animation:none}}
+.cmp{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1fr) minmax(0,1.1fr)}
+.cmp>div>div{display:flex;align-items:center;gap:12px;padding:20px;border-bottom:1px solid #E8E9F0;box-sizing:border-box}
+.cmp .k{font-weight:700;background:#F7F8FF;border-left:1.5px solid var(--ac);border-right:1.5px solid var(--ac)}
+.cmp .kt{border-top:1.5px solid var(--ac);border-radius:20px 20px 0 0}
+.cmp .kb{border-bottom:1.5px solid var(--ac);border-radius:0 0 20px 20px}
+@media (max-width:767px){.cmp{font-size:14px}.cmp>div>div{padding:14px 10px;gap:8px}.cmp .h3{font-size:16px}.cmp .dot{width:18px;height:18px}}
+.bn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+@media (max-width:767px){.bn{grid-template-columns:minmax(0,1fr)}}
+.mz{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:64px;gap:10px;max-width:980px;margin:56px auto 0}
+.mz>div{background:#F5F6FA;border-radius:24px;padding:20px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0}
+.mz>div>.gr{height:auto!important;background:none;margin-bottom:24px!important}
+.mz .ic{width:auto;height:auto;background:none;box-shadow:none;color:#565B70}
+.mz .ic svg{width:44px;height:44px;stroke-width:1.1}
+.mz .h3{font-size:18px}
+.mz p{font-size:13px!important;margin-top:8px!important}
+.mz>div>*{max-width:100%;box-sizing:border-box}.mz .h3,.mz p{width:100%;overflow-wrap:break-word;hyphens:auto}
+.mz>div:nth-child(1){grid-area:2/1/6/5}
+.mz>div:nth-child(4){grid-area:1/5/6/9}
+.mz>div:nth-child(4) .ic{color:var(--ac)}
+.mz>div:nth-child(4) .h3{font-size:24px}
+.mz>div:nth-child(3){grid-area:1/9/4/12}
+.mz>div:nth-child(2){grid-area:4/9/7/13}
+.mz>div:nth-child(5){grid-area:6/2/9/5}
+.mz>div:nth-child(6){grid-area:6/5/9/9}
+.mz>div:nth-child(7){grid-area:7/9/10/12}
+.mz::before{content:"+";grid-area:7/1/8/2;place-self:center;width:40px;height:40px;border-radius:50%;border:1px solid #D5D8E6;display:flex;align-items:center;justify-content:center;font-size:20px;color:#6B7083}
+@media (max-width:767px){.mz{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto}.mz>div:nth-child(n){grid-area:auto;padding:24px 12px;justify-content:flex-start}.mz>div:nth-child(4){grid-column:1/-1;order:-1;padding:32px 16px}.mz>div:nth-child(4) .h3{font-size:20px}.mz::before{display:none}.mz .h3{font-size:16px}.mz>div>.gr{margin-bottom:16px!important}}
+.wh{position:relative;flex:1 1 380px;height:440px;overflow:hidden;-webkit-mask-image:linear-gradient(transparent,#000 24%,#000 76%,transparent);mask-image:linear-gradient(transparent,#000 24%,#000 76%,transparent)}
+.wr{position:absolute;right:-450px;top:50%;width:520px;height:520px;margin-top:-260px;border-radius:50%;border:1px solid #D5D8E6;box-sizing:border-box;animation:kwr 12s ease-in-out infinite}
+.wi{position:absolute;left:50%;top:50%;width:0;height:0;transform:translateX(-278px)}
+.wn{position:absolute;right:0;top:0;transform:translateY(-50%);display:flex;align-items:center;gap:12px;white-space:nowrap}
+.wt{font-weight:700;font-size:17px;color:#9A9EB0;padding:6px 14px;border-radius:999px;border:1px solid transparent;animation:kwt 12s infinite}
+.wc{display:flex;align-items:center;justify-content:center;width:48px;height:36px;border-radius:999px;background:#F0F1F5;color:#9A9EB0;border:1.5px solid transparent;animation:kwc 12s infinite}
+.wc svg{width:20px;height:20px}
+.wm{position:absolute;right:56px;top:50%;width:30px;height:12px;margin-top:-6px;border-radius:99px;background:#3A3F55}
+.d1 .wt,.d1 .wc{animation-delay:-10s}.d2 .wt,.d2 .wc{animation-delay:-8s}.d3 .wt,.d3 .wc{animation-delay:-6s}.d4 .wt,.d4 .wc{animation-delay:-4s}.d5 .wt,.d5 .wc{animation-delay:-2s}
+@keyframes kwr{0%,13%{rotate:0deg}16.66%,29.6%{rotate:15deg}33.33%,46.3%{rotate:30deg}50%,63%{rotate:45deg}66.66%,79.6%{rotate:60deg}83.33%,96.3%{rotate:75deg}100%{rotate:90deg}}
+@keyframes kwt{0%,13%{color:#060A1A;background:#FFFFFF;border-color:#D5D8E6}16.66%,96.3%{color:#9A9EB0;background:transparent;border-color:transparent}100%{color:#060A1A;background:#FFFFFF;border-color:#D5D8E6}}
+@keyframes kwc{0%,13%{background:#ECEEFF;border-color:#2F3CFF;color:#2F3CFF}16.66%,96.3%{background:#F0F1F5;border-color:transparent;color:#9A9EB0}100%{background:#ECEEFF;border-color:#2F3CFF;color:#2F3CFF}}
+@media (max-width:767px){.wh{flex-basis:100%;height:380px}.wr{right:-470px}.wm{right:36px}.wt{font-size:14px;padding:5px 10px}.wn{gap:8px}.wc{width:42px;height:32px}}
+@media (prefers-reduced-motion:reduce){.wr,.wt,.wc{animation-play-state:paused}}
+.wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:767px){.wk{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sl{position:relative;border-radius:20px;overflow:hidden}
+.sl span{position:absolute;inset:0;opacity:0;animation:ksl 9s infinite}
+@keyframes ksl{0%{opacity:0}6%,33%{opacity:1}39%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.sl span{animation:none}.sl span:first-child{opacity:1}}
+.drop{animation:kdrop 9s linear infinite backwards}
+@keyframes kdrop{0%{translate:0 -420px;opacity:0;animation-timing-function:cubic-bezier(.55,0,1,.45)}1%{opacity:1}4%{translate:0 0;animation-timing-function:cubic-bezier(.2,.6,.4,1)}5.2%{translate:0 -12px;animation-timing-function:cubic-bezier(.6,0,.8,.4)}6.4%{translate:0 0}88%{translate:0 0;opacity:1}94%,100%{translate:0 0;opacity:0}}
+@media (prefers-reduced-motion:reduce){.drop{animation:none}}
+.msg{border-radius:24px 24px 24px 6px!important;animation:kmsg 14s cubic-bezier(.2,.9,.3,1.15) infinite backwards;transform-origin:0 100%}
+@keyframes kmsg{0%{opacity:0;transform:translateY(28px) scale(.94)}5%{opacity:1;transform:none}86%{opacity:1;transform:none}93%,100%{opacity:0;transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.msg{animation:none}}
+.pf input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.pf .tabs label{padding:16px 14px;cursor:pointer;border-bottom:2px solid transparent;color:#060A1A}
+.pf:has(#pf-all:checked) label[for=pf-all],.pf:has(#pf-land:checked) label[for=pf-land],.pf:has(#pf-site:checked) label[for=pf-site],.pf:has(#pf-shop:checked) label[for=pf-shop]{color:var(--ac);border-bottom-color:var(--ac)}
+.pf:has(#pf-land:checked) .pc:not(.f-land),.pf:has(#pf-site:checked) .pc:not(.f-site),.pf:has(#pf-shop:checked) .pc:not(.f-shop){display:none}
+.pf .pc{animation:kpf .35s ease-out}
+@media (min-width:768px){.pf .pc{max-width:calc(50% - 8px)}}
+@keyframes kpf{from{opacity:0;transform:translateY(8px)}}
+.sh{background:#FFFFFF;box-shadow:0 1px 2px rgba(20,24,80,.06),0 14px 36px rgba(20,24,80,.12)}
+</style>
+<style>html{scroll-behavior:smooth}body{margin:0}*{-webkit-tap-highlight-color:transparent}section[id]{scroll-margin-top:16px}</style>
+</head>
+<body>
+<div style="--ac: #2F3CFF; --hf: Evolventa, sans-serif; font-family: Evolventa, sans-serif; color: #060A1A; background: #FFFFFF; font-size: 17px; line-height: 1.55">
+
+<header style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" class="big" style="font-size: 22px; text-decoration: none">4Kath Studio</a>
+<nav class="dn" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
+<a href="#portfolio" style="text-decoration: none; padding: 12px 0">Trabajos</a>
+<a href="#process" style="text-decoration: none; padding: 12px 0">Cómo trabajamos</a>
+<a href="#pricing" style="text-decoration: none; padding: 12px 0">Precios</a>
+<a href="#cases" style="text-decoration: none; padding: 12px 0">Casos</a>
+<a href="#faq" style="text-decoration: none; padding: 12px 0">Preguntas</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="display: flex; gap: 2px; font-size: 14px; font-weight: 700">
+<a href="index.html" style="padding: 12px 8px; text-decoration: none; color: #6B7083">EN</a>
+<a href="ru.html" style="padding: 12px 8px; text-decoration: none; color: #6B7083">RU</a>
+<a href="es.html" style="padding: 12px 8px; text-decoration: underline">ES</a>
+</div>
+<a href="#pricing" class="btn gry dn" style="font-size: 15px">Ver precios</a>
+<details class="bg"><summary aria-label="Menú"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 18H4M20 12H4M20 6H4"></path></svg></summary><div class="bm"><a href="#portfolio">Trabajos</a><a href="#process">Cómo trabajamos</a><a href="#reviews">Opiniones</a><a href="#cases">Casos</a><a href="#team">Equipo</a><a href="#faq">Preguntas</a><a href="#contact">Contacto</a><a href="#pricing" class="ac">Ver precios</a></div></details>
+</div>
+</header>
+
+<section id="top" style="padding: 0 16px">
+<div style="max-width: 1408px; margin: 0 auto; border-radius: 36px; overflow: hidden; background: radial-gradient(circle at 50% 150%, #C9CEFF 0 52%, #D9DDFF 52% 58%, #E6E9FF 58% 64%, #F0F1FF 64% 70%, #F7F8FF 70%); padding: 72px 24px 72px; text-align: center">
+<div class="row" style="justify-content: center; gap: 8px"><span class="pill">Landing page en 72 horas</span><span class="pill t">Hecho por personas, acelerado con IA</span></div>
+<h1 class="big" style="font-size: clamp(38px, 6.6vw, 92px); margin: 24px auto 24px; max-width: 1100px">Sitios web diseñados por personas, desde <span class="ac">72 horas</span></h1>
+<p class="mut" style="font-size: 19px; max-width: 640px; margin: 0 auto 32px">Una landing page en 72 horas, un sitio completo en una semana, desde $420. <b style="color: #060A1A">Lo crean diseñadoras que saben de UX, UI y marketing,</b> y las herramientas de IA se encargan de la rutina.</p>
+<div class="row" style="justify-content: center; gap: 12px">
+<a href="#pricing" class="btn pri" style="background-color: #2f3cff">Ver precios<span class="arr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 7L15 12L10 17"></path></svg></span></a>
+<a href="#work" class="btn gry">Ver trabajos</a>
+</div>
+<div class="stage">
+<span aria-hidden="true" class="chip" style="left: 15cqw; top: 6cqw; background: #FFFFFF; color: var(--ac)"><svg viewBox="0 0 24 24"><path d="M16.9 3.6a2.4 2.4 0 0 1 3.4 3.4L7.6 19.7l-4.6 1.3 1.3-4.6z"></path><path d="M14.8 5.7l3.5 3.5"></path></svg></span>
+<span aria-hidden="true" class="chip" style="left: 3cqw; top: 11cqw; background: #FFFFFF; color: var(--ac)"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.6 7.6"></path><circle cx="11" cy="11" r="2"></circle></svg></span>
+<span aria-hidden="true" class="chip" style="left: 7cqw; top: 0; background: var(--ac); color: #FFFFFF"><svg viewBox="0 0 24 24"><path d="M10.2222 14.4888L9.51105 21.5999L18.7555 11.6443L13.7777 8.7999L14.4888 2.3999L5.24438 12.3555L10.2222 14.4888Z"></path></svg></span>
+<span aria-hidden="true" class="chip" style="right: 8cqw; top: -1cqw; background: #FFFFFF; color: var(--ac)"><svg viewBox="0 0 24 24"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg></span>
+<div class="sc" style="left: 2.5cqw; top: 22cqw; transform: rotate(-5deg)"><div class="l">Landing page</div><div class="big n">72h</div><div style="display: flex; justify-content: space-between; align-items: center"><span class="p">precio fijo</span><span style="background: #FFFFFF; color: #1B2180; border-radius: 99px; padding: .4cqw 1cqw; font-weight: 700; font-size: 1.4cqw">$420</span></div></div>
+<div class="br" aria-hidden="true">
+<div style="display: flex; gap: .6cqw; margin-bottom: 1.1cqw"><div style="width: .9cqw; height: .9cqw; border-radius: 50%; background: #E8E9F0"></div><div style="width: .9cqw; height: .9cqw; border-radius: 50%; background: #E8E9F0"></div><div style="width: .9cqw; height: .9cqw; border-radius: 50%; background: #E8E9F0"></div></div>
+<div class="bx">
+<div style="left: 2.72cqw; top: 2.9cqw; font-size: .44cqw; padding: .35cqw .6cqw; border-radius: 99px; background: #E4E5F1; border: 1px solid #D5D7E6">✦ Design Studio · Est. 2020</div>
+<div class="hh" style="left: 2.72cqw; top: 4.9cqw; width: 76px">Digital Marketing Agency</div>
+<div style="left: 2.72cqw; top: 17cqw; width: 16cqw; font-size: .52cqw; line-height: 1.6; color: #8A8D96">We are working with Designers, videographers, models, speakers and other high level specialists</div>
+<div class="bt" style="left: 2.72cqw; top: 19.33cqw; width: 8.64cqw; background: #0B0B0C; color: #FFFFFF; z-index: 2">Discuss project →</div>
+<div class="bt" style="left: 11.91cqw; top: 19.33cqw; width: 6.4cqw; border: 1px solid #B9BBC2; animation-name: kbw">View portfolio</div>
+<div style="left: 2.72cqw; top: 27cqw; display: flex; align-items: baseline; gap: .4cqw; font-size: .42cqw; color: #8A8D96"><b style="font-family: Unbounded, sans-serif; font-size: .95cqw; color: #0B0B0C">100+</b>projects<b style="font-family: Unbounded, sans-serif; font-size: .95cqw; color: #0B0B0C; margin-left: .8cqw">5 yrs</b>experience<b style="font-family: Unbounded, sans-serif; font-size: .95cqw; color: #0B0B0C; margin-left: .8cqw">50+</b>clients</div>
+<div style="left: 27.8cqw; top: 4.7cqw; width: 17.7cqw; height: 23.8cqw; background: #E9EAEE; border: 1px solid #DCDDE3; border-radius: .8cqw; box-sizing: border-box"></div>
+<img src="assets/img/hero-person.webp" alt="" style="left: 27.2cqw; top: 2.6cqw; width: 21.6cqw; height: auto">
+<div class="pl" style="left: 291px; top: 67px; rotate: 8deg; background-color: #FFFBCE; position: absolute">Ads</div>
+<div class="pl" style="left: 30cqw; top: .9cqw; rotate: -6deg; background: #B9B5E8">Collabarations</div>
+<div class="pl" style="left: 42.6cqw; top: 3.4cqw; rotate: 6deg; background: #D5DCCB">Est. 2020</div>
+<div class="pl" style="left: 39.6cqw; top: 12.9cqw; rotate: -4deg; background: #FFFFFF; animation-name: kp2">Consultation $150</div>
+<div class="pl" style="left: 23.2cqw; top: 13.4cqw; rotate: 5deg; background: #C5E3A5">100+ projects ✦</div>
+<div class="pl" style="left: 21.6cqw; top: 22cqw; rotate: -8deg; background: #EDB4B8; animation-name: kp1">Strategy</div>
+</div>
+<span class="cur"><svg viewBox="0 0 24 24"><path d="M3 2l6.5 19 3-8 8-3z"></path></svg><b>Diseñadora</b></span>
+</div>
+<div class="sc" style="right: 2.5cqw; top: 9cqw; transform: rotate(4deg)"><div class="l">Sitio multipágina</div><div class="big n">7 días</div><div style="display: flex; justify-content: space-between; align-items: center"><span class="p">precio fijo</span><span style="background: #FFFFFF; color: #1B2180; border-radius: 99px; padding: .4cqw 1cqw; font-weight: 700; font-size: 1.4cqw">$790</span></div></div>
+<div class="sc" style="right: 2.5cqw; top: 24cqw; transform: rotate(-3deg)"><div class="l">Tienda online</div><div class="big n">2 semanas</div><div style="display: flex; justify-content: space-between; align-items: center"><span class="p">precio fijo</span><span style="background: #FFFFFF; color: #1B2180; border-radius: 99px; padding: .4cqw 1cqw; font-weight: 700; font-size: 1.4cqw">$1,290</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="work" class="wrap" style="padding-top: 72px">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px"><div class="mut" style="font-size: 14px; letter-spacing: .08em; text-transform: uppercase">Trabajos recientes</div><a href="#portfolio" class="ac dn" style="font-weight: 700; text-decoration: none; padding: 12px 0">Ver todos ↓</a></div>
+<div class="wk">
+
+
+<img src="assets/img/recent-shine.jpg" alt="Shine — tienda online" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 50%; border-radius: 20px"><div class="sl" style="aspect-ratio: 3 / 4"><span role="img" aria-label="Proyecto 3 — pantalla 1" style="background: #EEF0F7 url(assets/img/work-3-white-tea.jpg) center / cover no-repeat"></span><span role="img" aria-label="Proyecto 3 — pantalla 2" style="background: #EEF0F7 url(assets/img/work-3-detox.jpg) center / cover no-repeat; animation-delay: 3s"></span><span role="img" aria-label="Proyecto 3 — pantalla 3" style="background: #EEF0F7 url(assets/img/work-3-drain-effect.jpg) center / cover no-repeat; animation-delay: 6s"></span></div><img src="assets/img/recent-first-point.jpg" alt="First Point — sitio web" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 50%; border-radius: 20px"><img src="assets/img/recent-dflib.jpg" alt="DFLib — sitio web" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 50%; border-radius: 20px">
+
+</div>
+</section>
+
+<section class="wrap c">
+<span class="pill t">5 años · EE. UU., Europa, Latinoamérica</span>
+<h2 class="h2" style="max-width: 820px; margin: 20px auto 40px">Empresas de tres continentes nos confían sus sitios</h2>
+<div class="row" style="justify-content: center; gap: 12px">
+<div class="bd" style="border-radius: 14px; padding: 16px 24px 10px; min-width: 150px"><div style="height: 44px; display: flex; align-items: center; justify-content: center"><img src="assets/img/logo-mercado-libre.png" alt="Mercado Libre" style="display: block; height: 30px; width: auto"></div><div class="mut" style="font-size: 10px; letter-spacing: .1em; margin-top: 8px">CASO</div></div>
+<div class="bd" style="border-radius: 14px; padding: 16px 24px 10px; min-width: 150px"><div style="height: 44px; display: flex; align-items: center; justify-content: center"><img src="assets/img/logo-huawei.png" alt="Huawei" style="display: block; height: 44px; width: auto"></div><div class="mut" style="font-size: 10px; letter-spacing: .1em; margin-top: 8px">CASO</div></div>
+<div class="bd" style="border-radius: 14px; padding: 16px 24px 10px; min-width: 150px"><div style="height: 44px; display: flex; align-items: center; justify-content: center"><img src="assets/img/logo-dflib.png" alt="Logo de cliente" style="display: block; height: 22px; width: auto"></div><div class="mut" style="font-size: 10px; letter-spacing: .1em; margin-top: 8px">CASO</div></div>
+</div>
+</section>
+
+<section class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px 48px">
+<div style="flex: 1.3 1 420px; min-width: 0">
+<p class="big" style="font-size: clamp(26px, 3.4vw, 42px); line-height: 1.2; max-width: 760px; margin: 0">Creemos que <span class="ac">un buen sitio web</span> es posible sin esperar. Por eso diseñamos el tuyo, escribimos los textos y lo publicamos <span class="ac">desde 72 horas.</span></p>
+</div>
+<div class="wh">
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0"><symbol id="w0" viewBox="0 0 24 24"><path d="M21.1721 6.41558L20.0032 5.24675L18.8344 4.07792M9.22403 2H14.1591M18.0552 7.19481L20.0032 5.24675M12.7711 10.961L11.0909 12.6412L12.7711 14.3214L11.0909 16.0016M20.3929 13.4286C20.3929 18.1624 16.5553 22 11.8214 22C7.08756 22 3.25 18.1624 3.25 13.4286C3.25 8.6947 7.08756 4.85714 11.8214 4.85714C16.5553 4.85714 20.3929 8.6947 20.3929 13.4286Z"></path></symbol><symbol id="w1" viewBox="0 0 24 24"><path d="M12.565 18.3079L18.8759 21.3761C20.0589 21.9512 21.3207 20.7482 20.8026 19.5392L13.8272 3.26097C13.3419 2.12856 11.7437 2.10863 11.2303 3.22859L3.73425 19.5828C3.18646 20.7779 4.41641 22.0118 5.61325 21.4678L12.565 18.3079Z"></path></symbol><symbol id="w2" viewBox="0 0 24 24"><path d="M13.4487 6.95143L17.0487 10.5514M4.44873 19.5514L8.81472 18.6717C9.04649 18.625 9.25931 18.5109 9.42645 18.3437L19.2001 8.56461C19.6687 8.09576 19.6684 7.33577 19.1994 6.86731L17.129 4.79923C16.6602 4.33097 15.9006 4.33129 15.4322 4.79995L5.65749 14.58C5.49068 14.7469 5.37678 14.9593 5.33003 15.1906L4.44873 19.5514Z"></path></symbol><symbol id="w3" viewBox="0 0 24 24"><path d="M16.3539 7.65238L16.3475 7.65235M19.5224 2.85129L13.7221 2.40511C13.2078 2.36555 12.702 2.55269 12.3373 2.91739L2.91738 12.3373C2.22741 13.0272 2.22741 14.1459 2.91738 14.8359L9.16393 21.0824C9.8539 21.7724 10.9726 21.7724 11.6625 21.0824L21.0824 11.6626C21.4471 11.2978 21.6342 10.792 21.5947 10.2777L21.1485 4.47737C21.0817 3.6085 20.3913 2.91813 19.5224 2.85129Z"></path></symbol><symbol id="w4" viewBox="0 0 24 24"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></symbol><symbol id="w5" viewBox="0 0 24 24"><path d="M11.9999 2.99999L11.9999 21M2.3999 12H20.9999M2.3999 5.99999L2.3999 18C2.3999 19.9882 4.01168 21.6 5.9999 21.6H17.9999C19.9881 21.6 21.5999 19.9882 21.5999 18V5.99999C21.5999 4.01177 19.9881 2.39999 17.9999 2.39999L5.9999 2.39999C4.01168 2.39999 2.3999 4.01177 2.3999 5.99999Z"></path></symbol></svg>
+<div class="wr">
+<div class="wi d0" style="rotate: 0deg"><div class="wn"><span class="wt">Online en días</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w0"></use></svg></span></div></div>
+<div class="wi d1" style="rotate: -15deg"><div class="wn"><span class="wt">Pensado para el visitante</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w1"></use></svg></span></div></div>
+<div class="wi d2" style="rotate: -30deg"><div class="wn"><span class="wt">Textos que venden</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w2"></use></svg></span></div></div>
+<div class="wi d3" style="rotate: -45deg"><div class="wn"><span class="wt">Precio conocido de antemano</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w3"></use></svg></span></div></div>
+<div class="wi d4" style="rotate: -60deg"><div class="wn"><span class="wt">La IA es la herramienta, decide la diseñadora</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w4"></use></svg></span></div></div>
+<div class="wi d5" style="rotate: -75deg"><div class="wn"><span class="wt">Landing, sitio o tienda</span><span class="wc"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#w5"></use></svg></span></div></div>
+<div class="wi d0" aria-hidden="true" style="rotate: -90deg"><div class="wn"><span class="wt">Online en días</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w0"></use></svg></span></div></div>
+<div class="wi d1" aria-hidden="true" style="rotate: -105deg"><div class="wn"><span class="wt">Pensado para el visitante</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w1"></use></svg></span></div></div>
+<div class="wi d2" aria-hidden="true" style="rotate: -120deg"><div class="wn"><span class="wt">Textos que venden</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w2"></use></svg></span></div></div>
+<div class="wi d3" aria-hidden="true" style="rotate: -135deg"><div class="wn"><span class="wt">Precio conocido de antemano</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w3"></use></svg></span></div></div>
+<div class="wi d4" aria-hidden="true" style="rotate: -150deg"><div class="wn"><span class="wt">La IA es la herramienta, decide la diseñadora</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w4"></use></svg></span></div></div>
+<div class="wi d5" aria-hidden="true" style="rotate: -165deg"><div class="wn"><span class="wt">Landing, sitio o tienda</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w5"></use></svg></span></div></div>
+<div class="wi d0" aria-hidden="true" style="rotate: -180deg"><div class="wn"><span class="wt">Online en días</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w0"></use></svg></span></div></div>
+<div class="wi d1" aria-hidden="true" style="rotate: -195deg"><div class="wn"><span class="wt">Pensado para el visitante</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w1"></use></svg></span></div></div>
+<div class="wi d2" aria-hidden="true" style="rotate: -210deg"><div class="wn"><span class="wt">Textos que venden</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w2"></use></svg></span></div></div>
+<div class="wi d3" aria-hidden="true" style="rotate: -225deg"><div class="wn"><span class="wt">Precio conocido de antemano</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w3"></use></svg></span></div></div>
+<div class="wi d4" aria-hidden="true" style="rotate: -240deg"><div class="wn"><span class="wt">La IA es la herramienta, decide la diseñadora</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w4"></use></svg></span></div></div>
+<div class="wi d5" aria-hidden="true" style="rotate: -255deg"><div class="wn"><span class="wt">Landing, sitio o tienda</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w5"></use></svg></span></div></div>
+<div class="wi d0" aria-hidden="true" style="rotate: -270deg"><div class="wn"><span class="wt">Online en días</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w0"></use></svg></span></div></div>
+<div class="wi d1" aria-hidden="true" style="rotate: -285deg"><div class="wn"><span class="wt">Pensado para el visitante</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w1"></use></svg></span></div></div>
+<div class="wi d2" aria-hidden="true" style="rotate: -300deg"><div class="wn"><span class="wt">Textos que venden</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w2"></use></svg></span></div></div>
+<div class="wi d3" aria-hidden="true" style="rotate: -315deg"><div class="wn"><span class="wt">Precio conocido de antemano</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w3"></use></svg></span></div></div>
+<div class="wi d4" aria-hidden="true" style="rotate: -330deg"><div class="wn"><span class="wt">La IA es la herramienta, decide la diseñadora</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w4"></use></svg></span></div></div>
+<div class="wi d5" aria-hidden="true" style="rotate: -345deg"><div class="wn"><span class="wt">Landing, sitio o tienda</span><span class="wc"><svg viewBox="0 0 24 24"><use href="#w5"></use></svg></span></div></div>
+</div>
+<span aria-hidden="true" class="wm"></span>
+</div>
+</section>
+
+<section class="wrap">
+<div class="c"><span class="pill">Desde $420 · precio fijo</span>
+<h2 class="h2" style="margin-top: 20px">Del brief al sitio publicado, <span class="ac">desde 72 horas.</span></h2>
+<p class="sub">Construiste algo bueno. Tu sitio debería mostrarlo.</p></div>
+<div class="cmp" role="table" style="max-width: 980px; margin: 48px auto 0">
+<div role="row" style="display: contents"><div role="columnheader" class="mut"></div><div role="columnheader" class="h3">Agencia tradicional</div><div role="columnheader" class="h3 k kt ac">4Kath Studio</div></div>
+<div role="row" style="display: contents"><div role="rowheader" class="mut">Plazo</div><div role="cell" class="mut"><span class="dot x"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4L4 20M20 20L4 4"></path></svg></span>1 mes en promedio</div><div role="cell" class="k"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.8 8.3999L9.64043 15.5999L7.19995 13.1456"></path></svg></span>Landing page en 72 horas</div></div>
+<div role="row" style="display: contents"><div role="rowheader" class="mut">Precio</div><div role="cell" class="mut"><span class="dot x"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4L4 20M20 20L4 4"></path></svg></span>Desde $1000</div><div role="cell" class="k"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.8 8.3999L9.64043 15.5999L7.19995 13.1456"></path></svg></span><span>Desde $420</span></div></div>
+<div role="row" style="display: contents"><div role="rowheader" class="mut" style="border-bottom: 0">Proceso</div><div role="cell" class="mut" style="border-bottom: 0"><span class="dot x"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 4L4 20M20 20L4 4"></path></svg></span>Briefings largos y reuniones sin fin</div><div role="cell" class="k kb"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.8 8.3999L9.64043 15.5999L7.19995 13.1456"></path></svg></span>Un brief corto y nos ponemos a trabajar</div></div>
+</div>
+<div class="row" style="margin-top: 40px; gap: 12px">
+<div class="gr c" style="flex: 1 1 180px; padding: 28px 16px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3.4" y="3.4" width="7.2" height="9.6" rx="2.2"></rect><rect x="13.4" y="3.4" width="7.2" height="5.6" rx="2.2"></rect><rect x="3.4" y="15.8" width="7.2" height="4.8" rx="2.2"></rect><rect x="13.4" y="11.8" width="7.2" height="8.8" rx="2.2"></rect></svg></span><div class="h3" style="font-size: 17px; margin-top: 20px">Experiencia en UX y UI</div></div>
+<div class="gr c" style="flex: 1 1 180px; padding: 28px 16px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21.1721 6.41558L20.0032 5.24675L18.8344 4.07792M9.22403 2H14.1591M18.0552 7.19481L20.0032 5.24675M12.7711 10.961L11.0909 12.6412L12.7711 14.3214L11.0909 16.0016M20.3929 13.4286C20.3929 18.1624 16.5553 22 11.8214 22C7.08756 22 3.25 18.1624 3.25 13.4286C3.25 8.6947 7.08756 4.85714 11.8214 4.85714C16.5553 4.85714 20.3929 8.6947 20.3929 13.4286Z"></path></svg></span><div class="h3" style="font-size: 17px; margin-top: 20px">Landing pages en 72 horas</div></div>
+<div class="gr c" style="flex: 1 1 180px; padding: 28px 16px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.4487 6.95143L17.0487 10.5514M4.44873 19.5514L8.81472 18.6717C9.04649 18.625 9.25931 18.5109 9.42645 18.3437L19.2001 8.56461C19.6687 8.09576 19.6684 7.33577 19.1994 6.86731L17.129 4.79923C16.6602 4.33097 15.9006 4.33129 15.4322 4.79995L5.65749 14.58C5.49068 14.7469 5.37678 14.9593 5.33003 15.1906L4.44873 19.5514Z"></path></svg></span><div class="h3" style="font-size: 17px; margin-top: 20px">Textos con enfoque de marketing</div></div>
+<div class="gr c" style="flex: 1 1 180px; padding: 28px 16px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg></span><div class="h3" style="font-size: 17px; margin-top: 20px">Herramientas de IA, decisiones humanas</div></div>
+<div class="gr c" style="flex: 1 1 180px; padding: 28px 16px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.3539 7.65238L16.3475 7.65235M19.5224 2.85129L13.7221 2.40511C13.2078 2.36555 12.702 2.55269 12.3373 2.91739L2.91738 12.3373C2.22741 13.0272 2.22741 14.1459 2.91738 14.8359L9.16393 21.0824C9.8539 21.7724 10.9726 21.7724 11.6625 21.0824L21.0824 11.6626C21.4471 11.2978 21.6342 10.792 21.5947 10.2777L21.1485 4.47737C21.0817 3.6085 20.3913 2.91813 19.5224 2.85129Z"></path></svg></span><div class="h3" style="font-size: 17px; margin-top: 20px">Precios fijos</div></div>
+</div>
+<div class="c" style="margin-top: 40px"><a href="#pricing" class="btn pri">Ver paquetes<span class="arr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 7L15 12L10 17"></path></svg></span></a></div>
+</section>
+
+<section style="background: #060A1A; color: #FFFFFF; margin-top: 112px; padding: 88px 24px">
+<div style="max-width: 760px; margin: 0 auto">
+<img src="assets/img/logo-bycrypto.png" alt="ByCrypto" style="display: block; height: 48px; width: 48px">
+<blockquote class="big" style="font-size: clamp(22px, 2.8vw, 32px); line-height: 1.3; margin: 28px 0">«Todo se ve muy bien. Apenas terminen, ya los espera el próximo proyecto.»</blockquote>
+<div style="font-weight: 700; font-size: 19px">Dmitry A.</div><div style="font-size: 14px; color: #C3C6D6">CEO, ByCrypto</div>
+</div>
+</section>
+
+<section class="wrap">
+<div class="c"><h2 class="h2" style="max-width: 820px; margin: 0 auto">Todo lo que tu sitio necesita, en un paquete a precio fijo.</h2><p class="sub">Un sitio terminado, no un mockup con el que todavía hay que hacer algo.</p></div>
+<div class="mz">
+<div style="flex: 1 1 420px"><div class="gr" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4.5"></rect><path d="M3 9.5H21M9.5 9.5V21"></path></svg></span></div><h3 class="h3">Estructura que lleva a la venta</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px; width: 244px">Planificamos el camino desde la primera pantalla hasta el botón de compra.</p></div>
+<div style="flex: 1 1 420px"><div class="gr" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.4487 6.95143L17.0487 10.5514M4.44873 19.5514L8.81472 18.6717C9.04649 18.625 9.25931 18.5109 9.42645 18.3437L19.2001 8.56461C19.6687 8.09576 19.6684 7.33577 19.1994 6.86731L17.129 4.79923C16.6602 4.33097 15.9006 4.33129 15.4322 4.79995L5.65749 14.58C5.49068 14.7469 5.37678 14.9593 5.33003 15.1906L4.44873 19.5514Z"></path></svg></span></div><h3 class="h3">Textos escritos por nosotras</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px; width: 221px">Títulos, ofertas y botones, en tu idioma.</p></div>
+<div style="flex: 1 1 280px"><div class="gr" style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg></span></div><h3 class="h3">Diseño con tu estilo</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px">Según tu marca o con colores y tipografías que elegimos nosotras.</p></div>
+<div style="flex: 1 1 280px"><div class="gr" style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.3999 15.6002V6.23096C20.3999 5.1094 19.4597 4.2002 18.2999 4.2002H5.6999C4.5401 4.2002 3.5999 5.1094 3.5999 6.23096V15.6002M20.3999 15.6002C21.0626 15.6002 21.5999 16.1375 21.5999 16.8002V18.6002C21.5999 19.2629 21.0626 19.8002 20.3999 19.8002H3.5999C2.93716 19.8002 2.3999 19.2629 2.3999 18.6002V16.8002C2.3999 16.1375 2.93716 15.6002 3.5999 15.6002M20.3999 15.6002H16.1999L14.3999 16.8002H9.8999L7.7999 15.6002H3.5999"></path></svg></span></div><h3 class="h3">Móvil y escritorio</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px">El sitio se lee bien en cualquier pantalla.</p></div>
+
+<div style="flex: 1 1 280px"><div class="gr" style="height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21.0703 2.92961L10.4063 13.5936M3.271 8.23529L19.8769 2.47406C20.8995 2.11927 21.8807 3.1004 21.5259 4.12303L15.7646 20.7289C15.37 21.8665 13.7725 21.8977 13.3337 20.7764L10.6968 14.0377C10.5651 13.7011 10.2988 13.4348 9.96226 13.3031L3.22354 10.6662C2.10219 10.2275 2.13338 8.62997 3.271 8.23529Z"></path></svg></span></div><h3 class="h3">Lanzamiento</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px; width: 179px">Publicamos el sitio en la plataforma que mejor se adapta a tu tipo de sitio.&nbsp;</p></div><div style="flex: 1 1 420px; height: 251px"><div class="gr" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M2.40093 8.41673L2.40084 17.941C2.40083 19.0456 3.29626 19.9411 4.40084 19.9411L19.5996 19.9411C20.7041 19.9411 21.5995 19.0457 21.5996 17.9412L21.5999 8.0125C21.5999 7.46021 21.1522 7.01247 20.5999 7.01247H12.0836L9.31857 4.05884H3.40028C2.84785 4.05884 2.40007 4.50605 2.40024 5.05848C2.40055 6.0093 2.40094 7.43621 2.40093 8.41673Z"></path></svg></span></div><h3 class="h3">Archivos y accesos incluidos</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px; width: 265px">Tenés acceso al repositorio con todo el código. El hosting y el dominio están a tu nombre desde el primer día.</p></div><div style="flex: 1 1 420px"><div class="gr" style="height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px"><span class="ic ln"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.9999 19.2C4.01168 19.2 2.3999 17.5882 2.3999 15.6V8.3999C2.3999 6.41168 4.01168 4.7999 5.9999 4.7999H11.3999M16.1999 4.7999H17.9999C19.9881 4.7999 21.5999 6.41168 21.5999 8.3999V15.6C21.5999 17.5882 19.9881 19.2 17.9999 19.2H10.1999M12.5999 21.5999L10.1999 19.2L12.5999 16.7999M10.1999 7.1999L12.5999 4.7999L10.1999 2.3999"></path></svg></span></div><h3 class="h3">2 rondas de cambios</h3><p class="mut" style="margin: 6px 0 0; font-size: 15px; width: 141px">Mirás, comentás y nosotras ajustamos.</p></div>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-top: 48px">
+<a href="#pricing" class="btn pri">Ver paquetes<span class="arr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 7L15 12L10 17"></path></svg></span></a>
+</div>
+</section>
+
+<section id="portfolio" class="wrap pf">
+<div class="c"><h2 class="h2">Nuestros trabajos recientes</h2><p class="sub">Algunos de nuestros últimos proyectos, para clientes de distintos países e industrias.</p></div>
+<input type="radio" name="pf" id="pf-all" checked><input type="radio" name="pf" id="pf-land"><input type="radio" name="pf" id="pf-site"><input type="radio" name="pf" id="pf-shop">
+<div class="bd tabs" style="display: flex; flex-wrap: wrap; gap: 4px; margin-top: 40px; border-radius: 14px; padding: 0 8px; font-size: 15px; font-weight: 700"><label for="pf-all">Todos</label><label for="pf-land">Landing pages</label><label for="pf-site">Sitios web</label><label for="pf-shop">Tiendas online</label></div>
+<div class="row" style="margin-top: 16px">
+
+<div class="bd pc f-land" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-lilo-photo.jpg" alt="Lilo Photo — sitio móvil" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div>
+<div class="bd pc f-shop" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-ama-ama.jpg" alt="AMA AMA — carrito de tienda" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div>
+<div class="bd pc f-land f-site" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-mywork.jpg" alt="MyWork — plataforma freelance" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div><div class="bd pc f-site" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-service-app.jpg" alt="App de servicios" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div><div class="bd pc f-shop" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-tableware.jpg" alt="Tienda de vajilla" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div>
+<div class="bd pc f-shop" style="flex: 1 1 480px; padding: 12px"><img src="assets/img/work-beauty-store.jpg" alt="Tienda de belleza y joyas — carrito" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px"></div>
+
+</div>
+</section>
+
+<section id="process" class="wrap">
+<div class="c"><h2 class="h2">Un proceso simple</h2><p class="sub">(Y cómo logramos ser tan rápidas y accesibles.)</p></div>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; margin-top: 56px">
+<div class="gr" style="flex: 1 1 360px; min-height: 400px; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: radial-gradient(circle at 50% 120%, #DCE0FF 0 40%, #ECEEFF 40% 55%, #F5F6FA 55%)">
+
+<div class="sh drop" style="animation-delay: 0.00s; border-radius: 14px; padding: 11px 18px; font-size: 15px; transform: rotate(-3deg); display: flex; align-items: center; gap: 10px"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 12px; height: 12px; stroke-width: 2"><path d="M5.5 3.5h3l1.8 4.5-2.3 1.4a11 11 0 0 0 6.6 6.6l1.4-2.3 4.5 1.8v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"></path></svg></span><b>Llamada corta</b></div>
+<div class="sh drop" style="animation-delay: 0.45s; border-radius: 14px; padding: 11px 18px; font-size: 15px; transform: rotate(2deg); display: flex; align-items: center; gap: 10px"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 12px; height: 12px; stroke-width: 2"><rect x="2.5" y="5" width="19" height="14" rx="3"></rect><path d="M2.5 10h19M6.5 15h3.5"></path></svg></span><b>50% de anticipo</b></div><div class="sh drop" style="animation-delay: 0.90s; border-radius: 14px; padding: 11px 18px; font-size: 15px; transform: rotate(-3deg); display: flex; align-items: center; gap: 10px"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 12px; height: 12px; stroke-width: 2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg></span><b>Brief completado</b></div><div class="sh drop" style="animation-delay: 1.35s; border-radius: 14px; padding: 11px 18px; font-size: 15px; transform: rotate(2deg); display: flex; align-items: center; gap: 10px"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 12px; height: 12px; stroke-width: 2"><path d="M13.45 6.95l3.6 3.6M4.45 19.55l4.37-.88c.23-.05.44-.16.61-.33l9.77-9.78a1.2 1.2 0 0 0 0-1.7l-2.07-2.07a1.2 1.2 0 0 0-1.7 0l-9.77 9.78c-.17.17-.29.38-.33.61z"></path></svg></span><b>Diseño y textos listos</b></div>
+<div class="sh drop" style="animation-delay: 1.80s; border-radius: 14px; padding: 11px 18px; font-size: 15px; transform: rotate(2deg); display: flex; align-items: center; gap: 10px"><span class="dot"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 12px; height: 12px; stroke-width: 2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"></path></svg></span><b>Maquetado, dominio conectado</b></div>
+<div class="drop" style="animation-delay: 2.25s; border-radius: 14px; padding: 11px 18px; font-size: 15px; background: var(--ac); color: #FFFFFF; box-shadow: 0 16px 36px rgba(47,60,255,.4); transform: rotate(-1deg); display: flex; align-items: center; gap: 10px"><span class="dot" style="background: #FFFFFF; color: var(--ac)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21.0703 2.92961L10.4063 13.5936M3.271 8.23529L19.8769 2.47406C20.8995 2.11927 21.8807 3.1004 21.5259 4.12303L15.7646 20.7289C15.37 21.8665 13.7725 21.8977 13.3337 20.7764L10.6968 14.0377C10.5651 13.7011 10.2988 13.4348 9.96226 13.3031L3.22354 10.6662C2.10219 10.2275 2.13338 8.62997 3.271 8.23529Z"></path></svg></span><b>Sitio publicado</b></div>
+</div>
+<div style="flex: 1.2 1 420px">
+<div style="padding-bottom: 36px; border-bottom: 1px solid #E8E9F0"><span class="pill">Paso 1</span><h3 class="h3" style="font-size: 26px; margin: 20px 0 10px">Pagá el 50% de anticipo</h3><p class="mut" style="margin: 0">La mitad del precio fijo para reservar tu lugar. Empezamos enseguida.</p></div>
+<div style="padding: 36px 0; border-bottom: 1px solid #E8E9F0"><span class="pill">Paso 2</span><h3 class="h3" style="font-size: 26px; margin: 20px 0 10px">Completá el brief</h3><p class="mut" style="margin: 0">Un formulario corto sobre tu negocio, tus clientes y los sitios que te gustan. Unos 20–40 minutos. Preguntamos solo lo necesario para empezar.</p></div>
+<div style="padding: 36px 0; border-bottom: 1px solid #E8E9F0"><span class="pill">Paso 3</span><h3 class="h3" style="font-size: 26px; margin: 20px 0 10px">Recibí el resultado</h3><p class="mut" style="margin: 0">Estudiamos tu negocio y a la competencia, planificamos la estructura, escribimos los textos y diseñamos las páginas. Una landing page está lista en 72 horas, un sitio en una semana.</p></div>
+<div style="padding: 36px 0; border-bottom: 1px solid #E8E9F0"><span class="pill">Paso 4</span><h3 class="h3" style="font-size: 26px; margin: 20px 0 10px">Maquetado, dominio, lanzamiento</h3><p class="mut" style="margin: 0">Aceptás el diseño o enviás comentarios. Después maquetamos el sitio, conectamos tu dominio y lo lanzamos. El 50% restante se paga cuando todo el trabajo está terminado.</p></div>
+</div>
+</div>
+</section>
+
+<section id="reviews" class="wrap">
+<div class="c"><h2 class="h2">Qué dicen los clientes</h2></div>
+<figure class="bd msg" style="margin: 40px 0 0; padding: 40px"><blockquote style="margin: 0 0 24px; max-width: 820px; font-size: 18px; line-height: 1.6">«¡4kath, gracias! Trabajar con el equipo en la landing del maratón fue facilísimo. Todo fue profesional, pensado y fluido, desde el primer mensaje hasta el resultado final.<br><br>Entendieron enseguida el tono y el mensaje que quería transmitir, y la página quedó con estilo y funcional, tal como la imaginaba (¡o incluso mejor!).<br><br>Gracias por la atención al detalle, la flexibilidad y la calidez en todo el proceso. Volveré con gusto para próximos proyectos y recomiendo su estudio con total confianza.»</blockquote><figcaption style="display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px"><img src="assets/img/avatar-mariya.webp" alt="Mariya M." style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none">Mariya M.<span class="mut" style="font-weight: 400">· Landing de maratón</span></figcaption><div class="mut" style="font-size: 12px; margin-top: 16px">Agosto 2025</div></figure>
+<div class="row" style="margin-top: 16px">
+<figure class="bd msg" style="flex: 1 1 300px; margin: 0; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; animation-delay: 1.4s"><blockquote style="margin: 0; font-size: 17px; line-height: 1.5">«¡Esto es fuego, Kath! ¿Cuántas latas de Red Bull hicieron falta?»</blockquote><figcaption style="display: flex; align-items: center; gap: 12px"><img src="assets/img/avatar-dmitry.jpg" alt="Dmitry" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none"><div><div style="font-weight: 700; font-size: 15px">Dmitry</div><div class="mut" style="font-size: 13px; margin-top: 2px">MyWork · Israel</div></div></figcaption></figure>
+<figure class="bd msg" style="flex: 1 1 300px; margin: 0; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; animation-delay: 2.8s"><blockquote style="margin: 0; font-size: 17px; line-height: 1.5">«¡Genial! ¡Vamoooos! Me encanta trabajar con vos.»</blockquote><figcaption style="display: flex; align-items: center; gap: 12px"><img src="assets/img/avatar-rodion.jpg" alt="Rodion" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none"><div><div style="font-weight: 700; font-size: 15px">Rodion</div><div class="mut" style="font-size: 13px; margin-top: 2px">Yurtas Andinas · Argentina</div></div></figcaption></figure><figure class="bd msg" style="flex: 1 1 300px; margin: 0; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; animation-delay: 4.2s"><blockquote style="margin: 0; font-size: 17px; line-height: 1.5">«Un diseño maravilloso. Me encantó.»</blockquote><figcaption style="display: flex; align-items: center; gap: 12px"><img src="assets/img/avatar-maria.jpg" alt="Maria" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none"><div><div style="font-weight: 700; font-size: 15px">Maria</div><div class="mut" style="font-size: 13px; margin-top: 2px">First Point · Dubái</div></div></figcaption></figure>
+</div>
+</section>
+
+<section id="pricing" class="wrap">
+<div class="c"><span class="pill t">Precios fijos · sin cobro por hora</span>
+<h2 class="h2" style="max-width: 860px; margin: 20px auto 0">Sitios bien hechos por una fracción del precio de una agencia.</h2>
+<p class="sub">Elegí lo que tu negocio necesita hoy.</p></div>
+<div class="row" style="align-items: stretch; margin-top: 56px">
+<div style="flex: 1 1 300px; border: 2px solid var(--ac); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 48px rgba(47,60,255,.2)">
+<div class="c" style="background: var(--ac); color: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: .08em; padding: 10px">LISTA EN 72 HORAS</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 16px; flex-grow: 1">
+<div class="h3">Landing page</div>
+<div class="big" style="font-size: 44px">$420</div>
+<p class="mut" style="margin: 0; font-size: 15px">Una página con un solo objetivo: un registro, una llamada o una venta. Para un lanzamiento, un servicio o una campaña publicitaria.</p>
+<a href="#contact" class="btn pri">Pedir una landing<span class="arr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 7L15 12L10 17"></path></svg></span></a>
+<div class="ac" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg>Trabajamos hasta que funcione + asesoría post-lanzamiento</div>
+<ul class="ck"><li>Estructura, textos y diseño</li><li>Versiones para móvil y escritorio</li><li>2 rondas de cambios</li><li>Entrega en 72 horas</li></ul>
+</div>
+</div>
+<div class="bd" style="flex: 1 1 300px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<div class="h3">Sitio multipágina</div>
+<div class="big" style="font-size: 44px">$790</div>
+<p class="mut" style="margin: 0; font-size: 15px">Un sitio completo de empresa: inicio, servicios, nosotros, contacto. Para un negocio que tiene más para contar de lo que entra en una página.</p>
+<a href="#contact" class="btn out">Pedir un sitio →</a>
+<div class="ac" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg>Trabajamos hasta que funcione + asesoría post-lanzamiento</div>
+<div class="pill t" style="justify-content: center">Todo lo de Landing page +</div>
+<ul class="ck"><li>Hasta 5 páginas</li><li>Menú y footer comunes</li><li>2 rondas de cambios</li><li>Entrega en 7 días</li></ul>
+</div>
+<div class="bd" style="flex: 1 1 300px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<div class="h3">Tienda online</div>
+<div class="big" style="font-size: 44px">$1,290</div>
+<p class="mut" style="margin: 0; font-size: 15px">Catálogo, ficha de producto, carrito y checkout, pensados para que comprar lleve pocos toques.</p>
+<a href="#contact" class="btn out">Pedir una tienda →</a>
+<div class="ac" style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700"><svg aria-hidden="true" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M14.8234 2.3999L16.6537 7.34611L21.5999 9.17637L16.6537 11.0066L14.8234 15.9528L12.9932 11.0066L8.04696 9.17637L12.9932 7.34611L14.8234 2.3999Z"></path><path d="M6.35284 13.694L7.95167 16.0481L10.3058 17.647L7.95167 19.2458L6.35284 21.5999L4.75402 19.2458L2.3999 17.647L4.75402 16.0481L6.35284 13.694Z"></path></svg>Trabajamos hasta que funcione + asesoría post-lanzamiento</div>
+<div class="pill t" style="justify-content: center">Todo lo de Sitio web +</div>
+<ul class="ck"><li>Hasta 5 productos al lanzar</li><li>Pago y envío: según la plataforma de la tienda</li><li>2 rondas de cambios</li><li>Entrega en 2 semanas</li></ul>
+</div>
+</div>
+<a href="#contact" class="btn out" style="display: flex; margin-top: 16px; min-height: 48px; border-radius: 16px">Agendar una llamada →</a>
+<div class="c" style="margin-top: 72px"><h3 class="h3" style="font-size: 24px">Nuestra garantía</h3><p class="mut" style="max-width: 620px; margin: 12px auto 0; font-size: 15px">Trabajamos hasta que tengas una página que funcione. Y si necesitás asesoría después del lanzamiento, te ayudamos.</p>
+<div class="row" style="justify-content: center; align-items: center; gap: 20px 36px; margin-top: 28px"><img src="assets/img/pay-paypal.png" alt="PayPal" style="display: block; height: 26px; width: auto"><img src="assets/img/pay-stripe.png" alt="Stripe" style="display: block; height: 30px; width: auto"><img src="assets/img/pay-usdt.png" alt="USDT (Tether)" style="display: block; height: 32px; width: auto"><img src="assets/img/pay-mercado-pago.png" alt="Mercado Pago" style="display: block; height: 30px; width: auto"></div></div>
+</section>
+
+<section id="team" class="wrap">
+<h2 class="h2">Conocé al equipo</h2>
+<p class="mut" style="margin: 12px 0 40px; font-size: 18px">Las personas que diseñan y escriben tu sitio.</p>
+<div class="row">
+<div style="flex: 1 1 200px"><img src="assets/img/team-katerina-khorolskaia.jpg" alt="Katerina Khorolskaia" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 20px"><div class="mut" style="font-size: 14px; margin-top: 16px">Fundadora, directora de arte</div><h3 class="h3">Katerina Khorolskaia</h3></div>
+<div style="flex: 1 1 200px"><img src="assets/img/team-ekaterina-baskakova.jpg" alt="Ekaterina Baskakova" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 20px"><div class="mut" style="font-size: 14px; margin-top: 16px">Diseñadora UX/UI</div><h3 class="h3">Ekaterina Baskakova</h3></div>
+<div style="flex: 1 1 200px"><img src="assets/img/team-ekaterina-aleksandrova.jpg" alt="Ekaterina Aleksandrova" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: 20px"><div class="mut" style="font-size: 14px; margin-top: 16px">Diseñadora UX/UI</div><h3 class="h3">Ekaterina Aleksandrova</h3></div>
+</div>
+</section>
+
+<section id="cases" class="wrap">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px"><h2 class="h2">Casos</h2></div>
+<div class="row">
+<a href="#portfolio" style="flex: 1 1 320px; text-decoration: none; color: inherit"><img src="assets/img/case-huawei.jpg" alt="HUAWEI Band 8 — portada del caso" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 20px"><h3 class="h3" style="margin-top: 16px">HUAWEI</h3><div class="mut" style="font-size: 15px">Tecnología · tienda de una página / landing promocional</div></a>
+<a href="#portfolio" style="flex: 1 1 320px; text-decoration: none; color: inherit"><img src="assets/img/case-savelle.jpg" alt="Savelle — portada del caso" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 20px"><h3 class="h3" style="margin-top: 16px">Savelle</h3><div class="mut" style="font-size: 15px">Belleza · tienda online</div></a>
+<a href="#portfolio" style="flex: 1 1 320px; text-decoration: none; color: inherit"><img src="assets/img/case-smart.jpg" alt="Smart — portada del caso" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 20px"><h3 class="h3" style="margin-top: 16px">Smart</h3><div class="mut" style="font-size: 15px">Educación · sitio multipágina</div></a>
+</div>
+</section>
+
+<section id="faq" class="wrap">
+<h2 class="h2" style="margin-bottom: 24px">Preguntas frecuentes</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 0 48px">
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿Usan IA?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">Sí, y lo hacemos bien. Las herramientas de IA se encargan de la rutina, por eso somos rápidas y accesibles. Qué dice el sitio, cómo está estructurado y cómo se ve lo decide una diseñadora.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿Cómo son tan rápidas?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">Un brief corto en lugar de semanas de reuniones, un proceso aceitado y herramientas que conocemos a fondo. Una landing lleva 72 horas, un sitio multipágina 7 días, una tienda online 2 semanas.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿Qué necesitan de mí?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">El brief completo, tu logo y fotos si los tenés, y un par de sitios que te gusten.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>No tengo textos. ¿Es un problema?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">No. Los escribimos a partir de tu brief. Es nuestro punto fuerte: sabemos de marketing y de cómo la gente lee una página. Justamente por eso te pedimos que completes el brief con atención: cuanto mejor entendamos tu negocio, tus clientes y tu oferta, mejor van a vender los textos.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿Y si quiero cambios?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">Cada paquete incluye 2 rondas de cambios. Una ronda es la lista completa de todo lo que querés corregir, enviada en un solo archivo. Si los cambios llegan en muchos mensajes sueltos, cada mensaje cuenta como una ronda, así que solo se incluyen los dos primeros.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿En qué idiomas trabajan?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">Inglés, español y ruso.</p></details>
+<details style="flex: 1 1 420px; padding: 22px 0; border-bottom: 1px solid #E8E9F0"><summary>¿Cómo es el pago?<svg aria-hidden="true" viewBox="0 0 24 24" style="flex: none"><path d="M12.0001 4.7998L12 19.1998M19.2 11.9998L4.80005 11.9998"></path></svg></summary><p class="mut" style="margin: 12px 0 0">Trabajamos con un anticipo del 50%: reserva tu lugar y empezamos enseguida. El 50% restante se paga cuando todo el trabajo está listo, antes del lanzamiento. Aceptamos PayPal, Stripe, USDT y Mercado Pago.</p></details>
+</div>
+</section>
+
+<section id="about" class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px">
+<h2 class="h2" style="flex: 1 1 320px">Sobre el estudio</h2>
+<div style="flex: 1.6 1 480px">
+<p style="margin: 0 0 16px; font-size: 20px">4Kath Studio trabaja desde enero de 2025.</p>
+<p class="mut" style="margin: 0 0 16px">Antes, cada una trabajaba por su cuenta en diseño de sitios web y apps. Nos conocimos estudiando y decidimos unir fuerzas.</p>
+<p class="mut" style="margin: 0">Desde entonces diseñamos muchísimos sitios, y cada uno sale más profesional que el anterior. Trabajamos con clientes de EE. UU., Europa y Latinoamérica, y usamos herramientas de IA para entregar en días.</p>
+</div>
+</section>
+
+<section id="contact" style="padding: 112px 16px 0">
+<div style="max-width: 1408px; margin: 0 auto; border-radius: 36px; background: radial-gradient(circle at 50% 150%, rgba(255,255,255,.22) 0 30%, transparent 30% 38%, rgba(255,255,255,.14) 38% 46%, transparent 46% 54%, rgba(255,255,255,.08) 54% 62%, transparent 62%), #2F3CFF; color: #FFFFFF; padding: 104px 24px; text-align: center; box-shadow: 0 30px 70px rgba(47,60,255,.30)">
+<h2 class="big" style="font-size: clamp(34px, 5.6vw, 76px); margin: 0 auto 32px; max-width: 980px">Tu landing page puede estar online en tres días</h2>
+<div class="row" style="justify-content: center; gap: 12px">
+<a href="#pricing" class="btn wht">Ver precios<span class="arr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 7L15 12L10 17"></path></svg></span></a>
+<a href="mailto:4kath.studio@gmail.com" class="btn" style="border: 1.5px solid #FFFFFF; color: #FFFFFF">Agendar una llamada</a>
+</div>
+</div>
+</section>
+
+<footer style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 40px; font-size: 15px">
+<div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between">
+<div style="flex: 1 1 240px"><div class="big" style="font-size: 22px; margin-bottom: 8px">4Kath Studio</div><div class="mut">Buenos Aires, Argentina</div><div class="mut">4kath.com · © 2026</div></div>
+<div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 8px"><a href="#portfolio">Trabajos</a><a href="#process">Cómo trabajamos</a><a href="#pricing">Precios</a><a href="#reviews">Opiniones</a><a href="#cases">Casos</a></div>
+<div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 8px"><a href="#team">Equipo</a><a href="#about">Nosotras</a><a href="#faq">Preguntas</a><a href="#contact">Contacto</a></div>
+<div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 8px"><a href="mailto:4kath.studio@gmail.com">4kath.studio@gmail.com</a><a href="https://www.instagram.com/4kath_design" target="_blank" rel="noopener">Instagram</a><a href="https://www.behance.net/4kath" target="_blank" rel="noopener">Behance</a><a href="https://www.linkedin.com/company/4kath" target="_blank" rel="noopener">LinkedIn</a></div>
+<div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 8px"><a href="#top">Términos de uso</a><a href="#top">Política de privacidad</a><a href="#top">Política de reembolso</a></div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
