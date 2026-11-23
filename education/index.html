@@ -371,7 +371,16 @@ dialog.pay::backdrop{background:rgba(6,10,26,.55)}
 .ig-time{opacity:.9}
 /* hero video 9:16, whole frame: sized by screen height so the video and the tags fit the first screen */
 .pic video.hero-video{display:block;width:auto;height:clamp(400px,calc(100vh - 300px),600px);max-width:100%;aspect-ratio:9/16;object-fit:contain;margin-inline:auto;border-radius:32px;box-shadow:0 24px 48px rgba(20,24,80,.22)}
-@media (max-width:760px){.pic video.hero-video{width:264px;height:auto}}
+/* phone: the copy stays on the light card; under it the video runs edge to edge to the bottom of the card,
+   whole 9:16 frame, and the section tags sit over its lower part */
+@media (max-width:760px){
+  .hero-card{overflow:hidden}
+  .hero-in{padding-bottom:0}
+  .hero-pic{flex-basis:100%}
+  .pic{width:calc(100% + var(--gut) + var(--gutr));margin-inline:calc(-1 * var(--gut)) calc(-1 * var(--gutr))}
+  .pic video.hero-video{width:100%;height:auto;border-radius:0;box-shadow:none}
+  .pic .tags{position:absolute;left:var(--gut);right:var(--gutr);bottom:24px;margin:0;z-index:1}
+}
 /* if autoplay is blocked (iOS low power mode) the poster stays, without the system play button */
 .hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
 /* reduced motion shows the whole phrase instead of typing it: let it wrap (it ran over the photo and widened the phone page to 629px) */
