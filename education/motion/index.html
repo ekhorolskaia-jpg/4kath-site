@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Профессиональный моушн для ваших видео — бесплатный урок 4Kath</title>
+<meta name="description" content="Снимаете себя на телефон — Claude накладывает графику точно по словам. Без After Effects и ключевых кадров: что снять, что открыть и готовый промпт.">
+<link rel="canonical" href="https://4kath.com/education/motion/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="4Kath">
+<meta property="og:url" content="https://4kath.com/education/motion/">
+<meta property="og:title" content="Профессиональный моушн для ваших видео — бесплатный урок 4Kath">
+<meta property="og:description" content="Снимаете себя на телефон — Claude накладывает графику точно по словам. Без After Effects и ключевых кадров: что снять, что открыть и готовый промпт.">
+<meta property="og:image" content="https://4kath.com/education/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/evolventa-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/assets/fonts/evolventa-bold.woff" as="font" type="font/woff" crossorigin>
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>
+/* Layout: one 760px reading column; hero on the 4Kath arc background, steps as a numbered sequence, code on ink. Single light look from the 4Kath design system. */
+@font-face{font-family:"Evolventa";src:url("/assets/fonts/evolventa-regular.woff") format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Evolventa";src:url("/assets/fonts/evolventa-bold.woff") format("woff");font-weight:700;font-display:swap}
+:root{
+  --blue:#2F3CFF; --blue-deep:#1B2180; --ink:#060A1A; --body:#565B70; --muted:#6B7083; --faint:#8A8FA3;
+  --surface:#FFFFFF; --soft:#F5F6FA; --border:#E8E9F0; --tint:#ECEEFF; --tint-soft:#F7F8FF;
+  --arc1:#C9CEFF; --arc2:#D9DDFF; --arc3:#E6E9FF; --arc4:#F0F1FF;
+  --on-dark:#D4D7EA; --on-dark-accent:#7C86FF; --on-dark-muted:#A9ADC4; --on-blue-accent:#C3C8FF;
+  --sans:"Evolventa",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sh-icon:0 1px 2px rgba(6,10,26,.06),0 10px 24px rgba(47,60,255,.16);
+  --sh-primary:0 4px 4px rgba(47,60,255,.08),0 12px 28px rgba(47,60,255,.35);
+  --sh-pill:0 2px 6px rgba(6,10,26,.05);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--surface);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-weight:700;letter-spacing:-.035em;line-height:1.04;text-wrap:balance;margin:0}
+h1 em,h2 em{font-style:normal;color:var(--blue)}
+p{margin:0}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--surface)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.logo{font-weight:700;font-size:20px;letter-spacing:-.03em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;min-width:0}
+.logo b{color:var(--blue)}
+.logo small{font-weight:400;font-size:13px;color:var(--muted);letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.langs{display:flex;gap:4px;background:var(--soft);border-radius:999px;padding:4px;flex:none}
+.langs button{font:700 13px var(--sans);border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--surface);color:var(--blue);box-shadow:var(--sh-pill)}
+.langs button:focus-visible,.btn:focus-visible,.copy:focus-visible,.done:focus-visible,.toc a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--surface)}
+.hero::before{content:"";position:absolute;left:50%;bottom:-520px;width:1300px;height:1040px;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(closest-side,var(--arc1) 0 34%,var(--arc2) 34% 50%,var(--arc3) 50% 66%,var(--arc4) 66% 82%,var(--tint-soft) 82% 100%);opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;padding-block:56px 72px;display:grid;gap:22px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;line-height:1.2;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-pill);color:var(--ink);width:fit-content}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.pill.tint{background:var(--tint);border-color:transparent;color:var(--blue-deep);box-shadow:none}
+.hero h1{font-size:clamp(40px,7.4vw,68px)}
+.lead{font-size:clamp(17px,2.2vw,19px);color:var(--body);max-width:620px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:18px 18px 16px}
+.stat b{display:block;font-size:40px;line-height:1;letter-spacing:-.04em;color:var(--blue)}
+.stat span{display:block;margin-top:6px;font-size:14px;line-height:1.35;color:var(--body)}
+
+section{padding-block:56px;border-top:1px solid var(--border)}
+.sec-head{display:grid;gap:12px;margin-bottom:28px}
+.eyebrow{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+h2{font-size:clamp(30px,4.8vw,44px)}
+.prose{display:grid;gap:14px;color:var(--body);max-width:66ch}
+.prose strong{color:var(--ink)}
+.quote{background:var(--soft);border-radius:40px 40px 40px 10px;padding:22px 26px;color:var(--ink);font-size:17px}
+.quote small{display:block;margin-top:8px;color:var(--muted);font-size:13px}
+
+/* reels */
+.reels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.reel{display:grid;gap:8px;margin:0;min-width:0}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:var(--soft);display:block;max-width:100%}
+.reel figcaption{font-size:13px;line-height:1.35;color:var(--muted)}
+.reel figcaption b{display:block;color:var(--ink);font-size:14px}
+@media (max-width:900px){.reels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.reels{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.reel{scroll-snap-align:start}}
+@media print{.reels{display:none}#reels{display:none}}
+
+/* toc */
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0;margin:0;list-style:none}
+.toc a{display:flex;gap:12px;align-items:baseline;padding:12px 16px;border-radius:16px;background:var(--soft);color:var(--ink);text-decoration:none;font-size:15px;line-height:1.3}
+.toc a:hover{background:var(--tint)}
+.toc a span{font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums;flex:none;min-width:22px}
+
+/* honest list */
+.facts{display:grid;gap:10px;padding:0;margin:0;list-style:none}
+.facts li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start;color:var(--body)}
+.facts li::before{content:"";width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:0 4px 10px rgba(47,60,255,.35)}
+.facts strong{color:var(--ink)}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tool{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:24px;background:var(--soft);color:var(--ink);text-decoration:none;min-width:0}
+a.tool:hover{background:var(--tint)}
+.tool .top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.tool b{font-size:17px;letter-spacing:-.02em}
+.tool p{font-size:14px;color:var(--body);line-height:1.45}
+.price{font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;background:var(--surface);color:var(--muted);white-space:nowrap}
+.price.paid{background:var(--blue);color:#fff}
+.tool.must{background:var(--surface);border:1px solid var(--border)}
+
+/* code */
+.code{background:var(--ink);border-radius:24px;overflow:hidden;color:var(--on-dark)}
+.code .head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px 12px 20px;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:var(--on-dark-muted)}
+.code .head span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.code pre{margin:0;padding:18px 20px 22px;overflow-x:auto;font:13.5px/1.6 var(--mono);white-space:pre-wrap;word-break:break-word;color:#EEF0FA}
+.copy{flex:none;font:700 13px var(--sans);border:0;border-radius:999px;padding:8px 14px;background:var(--blue);color:#fff;cursor:pointer;box-shadow:var(--sh-primary)}
+.copy.ok{background:#fff;color:var(--blue);box-shadow:none}
+
+.note{display:grid;gap:8px;padding:20px 22px;border-radius:24px;background:var(--tint-soft);border:1px solid var(--arc3)}
+.note b{color:var(--blue-deep)}
+.note p,.note li{color:var(--body);font-size:15px}
+.note ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.stack{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}
+.hero .wrap,.train .wrap,.pdf .wrap,.sec-head{grid-template-columns:minmax(0,1fr)}
+
+/* steps */
+.step{display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;padding-block:40px;border-top:1px solid var(--border)}
+.step:first-of-type{border-top:0}
+.num{font-weight:700;font-size:84px;line-height:.85;letter-spacing:-.05em;color:var(--on-dark-accent);font-variant-numeric:tabular-nums}
+.step .eyebrow{color:var(--muted)}
+.step h3{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.03em;line-height:1.1}
+.step .opt{display:inline-block;vertical-align:middle;margin-left:8px;font-size:12px;font-weight:700;letter-spacing:0;padding:4px 10px;border-radius:999px;background:var(--tint);color:var(--blue-deep)}
+.done{justify-self:start;display:inline-flex;align-items:center;gap:10px;font:700 14px var(--sans);padding:10px 16px 10px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--ink);cursor:pointer}
+.done i{width:20px;height:20px;border-radius:50%;border:2px solid var(--arc1);flex:none}
+.done[aria-pressed="true"]{background:var(--tint);border-color:transparent;color:var(--blue-deep)}
+.done[aria-pressed="true"] i{border-color:var(--blue);background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.tips{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.tips li{position:relative;padding-left:20px;color:var(--body)}
+.tips li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+
+/* mistakes */
+.errs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;margin:0;list-style:none;counter-reset:e}
+.err{padding:22px;border-radius:24px;border:1px solid var(--border);display:grid;gap:8px;align-content:start;counter-increment:e}
+.err h3{font-size:19px;letter-spacing:-.02em;line-height:1.2}
+.err h3::before{content:counter(e,decimal-leading-zero) "  ";color:var(--blue)}
+.err p{font-size:15px;color:var(--body)}
+.err p.fix{color:var(--ink)}
+.err p.fix b{color:var(--blue)}
+
+/* training */
+.train{background:var(--blue);color:#fff;position:relative;overflow:hidden;border-top:0}
+.train::before{content:"";position:absolute;right:-380px;top:-380px;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(closest-side,transparent 0 40%,rgba(255,255,255,.06) 40% 55%,transparent 55% 70%,rgba(255,255,255,.05) 70% 85%,transparent 85%);pointer-events:none}
+.train .wrap{position:relative;display:grid;gap:28px}
+.train .eyebrow{color:#E6E8FF}
+.train h2 em{color:var(--on-blue-accent)}
+.train .lead{color:#E6E8FF}
+.train .pill{background:rgba(255,255,255,.14);border-color:transparent;color:#fff;box-shadow:none}
+.train .pill::before{background:#fff}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.col{border-radius:24px;padding:22px;display:grid;gap:12px;align-content:start}
+.col.ai{background:rgba(255,255,255,.1)}
+.col.me{background:#fff;color:var(--ink)}
+.col h3{font-size:20px;letter-spacing:-.02em}
+.col ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.col li{padding-left:22px;position:relative;font-size:15px;line-height:1.45}
+.col.ai li{color:#E6E8FF}
+.col.me li{color:var(--body)}
+.col li::before{content:"";position:absolute;left:0;top:.45em;width:10px;height:10px;border-radius:3px}
+.col.ai li::before{background:var(--on-blue-accent)}
+.col.me li::before{background:var(--blue);border-radius:50%}
+.prog{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.prog li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;padding:16px 18px;border-radius:20px;background:rgba(6,10,26,.18)}
+.prog li span{font-weight:700;font-size:26px;line-height:1;color:var(--on-blue-accent);font-variant-numeric:tabular-nums}
+.prog li b{display:block;font-size:17px;letter-spacing:-.01em}
+.prog li p{font-size:14px;color:#DCDFFF;margin-top:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 16px var(--sans);text-decoration:none;border:0;border-radius:999px;padding:16px 28px;cursor:pointer;width:fit-content}
+.btn.white{background:#fff;color:var(--blue);box-shadow:0 12px 28px rgba(6,10,26,.2)}
+.btn.blue{background:var(--blue);color:#fff;box-shadow:var(--sh-primary)}
+.soon{font-size:13px;color:#DCDFFF}
+
+.tr-cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
+.btn.line:hover{background:rgba(255,255,255,.12)}
+.train .btn:focus-visible,.code .copy:focus-visible{outline-color:#fff}
+/* the first word of the title was cut off on phones at 40px */
+@media (max-width:480px){.hero h1{font-size:clamp(28px,8.6vw,40px)}}
+/* pdf */
+.pdf .wrap{display:grid;gap:16px}
+.pdf-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:28px;border-radius:24px;background:var(--soft)}
+.pdf-msg{font-size:13px;color:var(--muted)}
+
+footer{background:var(--ink);color:var(--on-dark-muted);font-size:14px}
+footer .wrap{padding-block:32px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+footer b{color:#fff;font-size:18px;letter-spacing:-.03em}
+footer b em{font-style:normal;color:var(--on-dark-accent)}
+footer .links{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{color:var(--on-dark);text-decoration:none}
+footer a:hover{color:#fff}
+
+@media (max-width:640px){
+  .stats{grid-template-columns:1fr}
+  .stat{display:flex;align-items:baseline;gap:14px;padding:14px 18px}
+  .stat span{margin:0}
+  .toc,.tools,.errs,.split{grid-template-columns:1fr}
+  .step{grid-template-columns:1fr;gap:10px;padding-block:32px}
+  .num{font-size:56px}
+  .pdf-card{grid-template-columns:1fr}
+  .logo small{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .copy,.done,.toc a,a.tool,.btn{transition:background .15s,color .15s,transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+}
+@media print{
+  .bar,.done,.copy,.pdf,.train .btn,.soon,body::before{display:none!important}
+  section{break-inside:auto;padding-block:28px}
+  .step,.tool,.err,.code,.note,.prog li{break-inside:avoid}
+  .hero .wrap{padding-block:24px 40px}
+  .code pre{white-space:pre-wrap}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap">
+  <a class="logo" href="#top"><span>4<b>Kath</b></span><small data-t="barNote"></small></a>
+  <div class="langs" role="group" aria-label="Language" hidden>
+    <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+    <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div></div>
+
+<main id="top">
+  <header class="hero"><div class="wrap">
+    <span class="pill" data-t="heroPill"></span>
+    <h1 data-h="h1"></h1>
+    <p class="lead" data-t="heroLead"></p>
+    <div class="stats" id="stats"></div>
+  </div></header>
+
+  <section id="reels"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="reelsEy"></span><h2 data-t="reelsH"></h2><p class="lead" data-t="reelsLead"></p></div>
+    <div class="reels" id="reelList"></div>
+  </div></section>
+
+  <section id="route"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="routeEy"></span><h2 data-t="routeH"></h2></div>
+    <ol class="toc" id="toc"></ol>
+  </div></section>
+
+  <section id="honest"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="honestEy"></span><h2 data-t="honestH"></h2></div>
+    <ul class="facts" id="facts"></ul>
+  </div></section>
+
+  <section id="tools"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="toolsEy"></span><h2 data-t="toolsH"></h2><p class="lead" data-t="toolsLead"></p></div>
+    <div class="tools" id="toolList"></div>
+  </div></section>
+
+  <section id="prompt"><div class="wrap stack">
+    <div class="sec-head"><span class="eyebrow" data-t="promptEy"></span><h2 data-t="promptH"></h2></div>
+    <div class="note"><b data-t="whyH"></b><p data-t="why"></p></div>
+    <div class="code" data-code="mainPrompt"></div>
+    <div class="note"><b data-t="howH"></b><ul id="howList"></ul></div>
+    <div class="note"><b data-t="getH"></b><p data-t="get"></p></div>
+  </div></section>
+
+  <section id="steps"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="stepsEy"></span><h2 data-t="stepsH"></h2></div>
+    <div id="stepList"></div>
+  </div></section>
+
+  <section id="mistakes"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow" data-t="errEy"></span><h2 data-t="errH"></h2><p class="lead" data-t="errLead"></p></div>
+    <ol class="errs" id="errList"></ol>
+    <div style="margin-top:20px"><button type="button" class="done" data-step="final"><i></i><span data-t="finalDone"></span></button></div>
+  </div></section>
+
+  <section class="train" id="training"><div class="wrap">
+    <div class="sec-head" style="margin:0"><span class="eyebrow" data-t="trEy"></span><span class="pill" data-t="trPill"></span><h2 data-h="trH"></h2><p class="lead" data-t="trLead"></p></div>
+    <ol class="prog" id="progList"></ol>
+    <div class="tr-cta"><a class="btn white" href="/education/#program">Программа курса →</a><a class="btn line" href="/education/#pricing">Тарифы</a><a class="btn line" href="/education/#webinar">Бесплатный вебинар</a></div>
+  </div></section>
+
+  <section class="pdf" id="pdf"><div class="wrap">
+    <div class="pdf-card">
+      <div style="display:grid;gap:8px"><span class="eyebrow" data-t="pdfEy"></span><h2 data-t="pdfH" style="font-size:clamp(26px,4vw,34px)"></h2><p class="lead" style="font-size:16px" data-t="pdfLead"></p><p class="pdf-msg" id="pdfMsg" hidden></p></div>
+      <a class="btn blue" id="pdfBtn" href="pdf/4kath-motion-ru.pdf" target="_blank" rel="noopener" data-t="pdfBtn"></a>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <b>4<em>Kath</em> Studio</b>
+  <div class="links">
+    <a href="https://4kath.com" target="_blank" rel="noopener">4kath.com</a>
+    <a href="https://instagram.com/4kath_design" target="_blank" rel="noopener">@4kath_design</a>
+    <a href="https://www.behance.net/4kath" target="_blank" rel="noopener">Behance</a>
+    <span>4kath.studio@gmail.com</span>
+  </div>
+</div></footer>
+
+<script>
+const REELS = [["collagen",0],["ai-vs-designer",1],["BeautyBlend",2],["dont-hire-devs",3],["unknown-case",4]];
+const T = {
+/* ======================= RU ======================= */
+ru:{
+  reelsEy:"Результат", reelsH:"Вот что получится у вас", reelsLead:"Все пять роликов собраны этим способом: видео с телефона, графика по словам, ни одного ключевого кадра руками.",
+  reels:[["Коллаген: 3 типа","Обучающий ролик: схемы и иконки на каждом слове"],["ИИ за 5 минут vs дизайнер за 72 часа","Говорящая голова на английском и сравнение сайтов"],["Beauty Blend","Эксперт в кадре, польза продукта на плашках"],["Не нанимайте разработчиков","Говорящая голова, макеты и цена поверх видео"],["Кейс Unknown","Айдентика бренда в динамичной подаче"]],
+  barNote:"Промпт · Инструкция",
+  heroPill:"Из ролика про моушн",
+  h1:"Профессиональный моушн для ваших видео, <em>который держит внимание</em>",
+  heroLead:"Снимаете себя на телефон — Claude накладывает графику точно по словам. Без After Effects и ключевых кадров: что снять, что открыть и готовый промпт.",
+  stats:[["1","главный промпт"],["7","шагов от съёмки до ролика"],["0","ключевых кадров руками"]],
+  promise:"«Хотите промпт, с которого я начинаю делать такую графику? Напишите в комментариях „моушн“ — пришлю промпт и инструкцию, как собрать такую же работу.»",
+  promiseSrc:"Обещала в ролике — держите.",
+  intro:[
+    "Суть простая: Claude не рисует видео, он пишет его кодом. Каждая подпись, линия и переход — это формула от времени, а Remotion превращает этот код в обычный MP4.",
+    "<strong>Основа ролика — вы в кадре.</strong> Снимаете говорящую голову ровно по тексту, а Claude накладывает графику точно по словам и сам вставляет ваши дополнительные видео туда, где они к месту.",
+    "Ниже всё по шагам. Первый ролик займёт вечер, дальше быстрее."
+  ],
+  routeEy:"Маршрут", routeH:"Что вы получите",
+  toc:[["01","Посмотрите, что получится","reels"],["02","Без сюрпризов: что нужно для старта","honest"],["03","3 обязательных инструмента и бонусы","tools"],["04","Промпт, с которого начинается каждый ролик","prompt"],["05","От видео с телефона до рилса за 7 шагов","steps"],["06","5 ошибок, из-за которых ролик листают","mistakes"],["07","Что дальше: курс «Интеграция ИИ в работу дизайнера, блогера, предпринимателя»","training"],["08","Заберите инструкцию с собой","pdf"]],
+  honestEy:"Сразу честно", honestH:"Без сюрпризов: что нужно для старта",
+  facts:[
+    "<strong>Claude Code платный.</strong> Он входит в подписку Claude Pro — от $17 в месяц при оплате за год — и в тарифы Max. На бесплатном тарифе его нет.",
+    "<strong>Remotion бесплатен для авторов.</strong> Частным лицам и командам до 3 человек можно делать ролики бесплатно, в том числе коммерческие. Компаниям побольше нужна платная Company License.",
+    "<strong>Нужен компьютер.</strong> Mac, Windows или Linux. Рендер 60-секундного ролика на обычном ноутбуке занимает несколько минут.",
+    "<strong>Вкус остаётся за вами.</strong> Claude пишет код и вносит правки, но что оставить, а что переделать, решаете вы. Без правок первая версия обычно выглядит как слайды."
+  ],
+  toolsEy:"Инструменты", toolsH:"3 обязательных инструмента и бонусы", toolsLead:"Обязательные — первые три, остальное по ситуации.",
+  tools:[
+    ["Claude Code","Пишет графику кодом и правит её по вашим словам","платно","https://claude.com/claude-code",1,1],
+    ["Remotion","Видео на React: код → кадры → MP4, превью в браузере","бесплатно","https://www.remotion.dev",0,1],
+    ["Node.js (LTS)","Нужен, чтобы работал Remotion","бесплатно","https://nodejs.org/en",0,1],
+    ["faster-whisper","Расшифровка речи с таймингом каждого слова, прямо на компьютере","бесплатно","https://github.com/SYSTRAN/faster-whisper",0,0],
+    ["FFmpeg","Вырезать паузы и дубли, свести звук, подготовить видео","бесплатно","https://ffmpeg.org",0,0],
+    ["CapCut или Edits","Быстро подрезать видео на телефоне, если есть навык — по желанию","бесплатно","https://www.capcut.com",0,0],
+    ["VS Code","Смотреть файлы проекта — по желанию","бесплатно","https://code.visualstudio.com",0,0],
+    ["Google Fonts","Шрифты со свободной лицензией OFL","бесплатно","https://fonts.google.com",0,0],
+    ["StreamBeats","Музыка, которую можно монетизировать, без указания автора","бесплатно","https://streambeats.com/licensing",0,0],
+    ["Телефон, штатив, свет","Снять говорящую голову: дневной свет из окна или лампа спереди","своё","",0,0]
+  ],
+  promptEy:"Основа ролика", promptH:"Промпт, с которого начинается каждый ролик",
+  whyH:"Зачем он",
+  why:"Если просто написать «сделай красивую анимацию», выйдут слайды с затемнениями поверх лица. Этот промпт сразу задаёт то, что делает ролик живым: графику по словам, бережное отношение к лицу в кадре, вставки из ваших материалов, переходы камерой и звук.",
+  codeLabel:"Промпт для Claude Code — скопируйте и вставьте",
+  mainPrompt:`Ты — моушн-дизайнер и разработчик на Remotion. Собери в этой папке ролик: моё видео с говорящей головой — основа, твоя графика — поверх.
+
+Исходные данные:
+– основное видео: [имя файла, например talking.mp4]
+– текст ролика: [вставь текст целиком, ровно как я его говорю]
+– видео уже подрезано: [да / нет — если нет, вырежи паузы и дубли сам]
+– дополнительные материалы: папка [broll/], файлы названы по смыслу
+– подсказки по вставкам (необязательно): [figma-screen.mp4 — когда говорю про макет; client-logo.png — когда называю клиента]
+– формат: [1080×1920, вертикаль для Reels]
+– плашки: [белые #FFFFFF], текст: [#060A1A], акцент: [синий #2F3CFF]
+– шрифт: [Evolventa или любой с Google Fonts]
+
+Что сделать:
+1. Расшифруй речь локально через faster-whisper с таймингом каждого слова и сохрани words.json. Всю графику привязывай к началу слов, а не к «примерным секундам».
+2. Если видео не подрезано — найди паузы длиннее 0,6 секунды и неудачные дубли (я повторяла фразу после паузы), вырежи их через FFmpeg и оставь лучшие попытки. Исходник не трогай, сохрани новый файл.
+3. Говорящая голова — основной слой. Графика не закрывает лицо: держи её в верхней трети кадра или сбоку. Весь текст — внутри безопасной зоны Reels: сверху 250 px и снизу 400 px свободны.
+4. Разбей ролик на сцены по смыслу: новая сцена каждые 3–6 секунд, новое визуальное событие каждые 1,5–2 секунды.
+5. Изучи файлы в папке broll/: по названию и по кадрам пойми, что на каждом. Вставь их туда, где я говорю о том же, — на весь экран на 2–4 секунды или окном поверх кадра. Голос в это время продолжает звучать. Учитывай мои подсказки по вставкам. Что не подходит по смыслу — не используй.
+6. Сделай одного сквозного героя — точку или линию акцентного цвета. Она подчёркивает ключевые слова, рисует стрелки и уводит взгляд в следующую сцену.
+7. Переходы — движением камеры: наезд на лицо, рывок с размытием, сдвиг. Никаких простых затемнений.
+8. 2–3 раза за ролик — удар на весь экран: одно крупное слово на фоне акцентного цвета.
+9. Показывай смысл, а не дублируй речь. Говорю «сайт» — покажи окно браузера, говорю «за 72 часа» — таймер.
+10. Добавь субтитры по словам: 2–4 слова на экране, ключевое слово выделено акцентом, минимум 48 px.
+11. Звук: щелчок на появлениях, свист на переходах, удар на крупных словах. Музыка на 12–18 дБ тише голоса.
+
+Когда соберёшь — открой превью в Remotion Studio и пришли список сцен с секундами и какие файлы из broll/ куда поставил. Дальше жди моих правок.`,
+  howH:"Как использовать",
+  how:["Вставьте его в Claude Code в папке проекта (шаг 6).","Замените всё в квадратных скобках: файлы, текст, подсказки, формат, цвета и шрифт.","Цвета пишите кодами — так Claude не перепутает оттенок."],
+  getH:"Что получите",
+  get:"Готовый проект Remotion: ваше видео, графика по словам, вставки из broll/, субтитры и звук. Остаётся смотреть превью и править словами.",
+  stepsEy:"Инструкция", stepsH:"От видео с телефона до рилса за 7 шагов",
+  stepOf:"из 7", optional:"по желанию", done:"Шаг выполнен", copy:"Скопировать", copied:"Скопировано",
+  steps:[
+    {h:"Поставьте Claude Code", body:["Установите по официальной инструкции и войдите в аккаунт Claude с подпиской Pro или Max. На Mac и Linux хватит одной команды в «Терминале»:"], code:"curl -fsSL https://claude.ai/install.sh | bash", after:["Для Windows инструкция на странице Claude Code. Дальше все команды за вас запускает сам Claude."]},
+    {h:"Снимите говорящую голову", body:["Сначала текст, потом съёмка. Говорите <strong>ровно тот текст</strong>, который потом вставите в промпт: так Claude точнее привяжет графику к словам."], tips:["Телефон вертикально на штатив, камера на уровне глаз.","Свет спереди: окно днём или лампа. Тихая комната или петличка.","Над головой оставьте немного места — туда ляжет графика.","Оговорились — помолчите 2 секунды и повторите фразу с начала. По паузам Claude потом найдёт и вырежет неудачные дубли."]},
+    {h:"Подрежьте видео", opt:1, body:["Если есть навык — подрежьте в CapCut или Edits: уберите паузы, дубли, начало и конец. <strong>Без субтитров, эффектов и музыки</strong> — это сделает Claude. Экспорт 1080×1920, 30 кадров в секунду."], note:"Не хотите или не умеете — пропустите шаг. В промпте укажите «видео не подрезано», и Claude сам вырежет паузы и дубли через FFmpeg."},
+    {h:"Подготовьте дополнительные материалы", body:["Если у вас есть другие видео — скринкасты, кадры работы, фото, логотипы, — сложите их заранее в папку <strong>broll/</strong>. Называйте файлы по смыслу: Claude смотрит на название и на кадры и сам решает, куда что наложить."], code:"broll/\n  laptop-typing.mp4\n  figma-screen.mp4\n  site-before-after.mp4\n  client-logo.png\n  team-photo.jpg", after:["Хотите вставку в конкретный момент — допишите подсказку в промпт: «figma-screen.mp4 — когда говорю про макет». Нет материалов — не страшно, Claude соберёт графику без них."]},
+    {h:"Подготовьте проект", body:["Создайте папку проекта, положите туда основное видео и папку broll/. Откройте Claude Code в этой папке и вставьте:"], code:"Проверь, что у меня стоят Node.js и FFmpeg, если нет — поставь. Потом создай в этой папке проект Remotion через npx create-video@latest (шаблон Blank), перенеси моё видео и папку broll/ в public/ и коротко расскажи, что получилось."},
+    {h:"Вставьте главный промпт", body:["Тот, что выше, — с вашим текстом, файлами, подсказками, цветами и форматом. Claude расшифрует речь, изучит материалы из broll/, разобьёт ролик на сцены и соберёт графику поверх видео."]},
+    {h:"Правьте словами и отрендерите", body:["Превью откроется в браузере (Remotion Studio). Смотрите, ставьте на паузу и пишите правки обычными словами, с секундой:"], code:"На 12-й секунде графика закрывает лицо — подними её выше.\nВставь figma-screen.mp4 на 20-й секунде, когда я говорю «макет».\nУбери вставку laptop-typing.mp4 — она не по смыслу.\nСделай субтитры крупнее и выдели слово «бесплатно».\nПерекрась акцент в #2F3CFF.", mid:"Когда всё нравится:", code2:"Отрендери финал в MP4 (H.264), 1080×1920, 30 fps. Проверь звук: пик не выше −1 дБ, музыка на 12–18 дБ тише голоса.", after:["Готовый файл можно сразу загружать в Reels, Shorts и TikTok."]}
+  ],
+  errEy:"Частые ошибки", errH:"5 ошибок, из-за которых ролик листают", errLead:"Пять ошибок, из-за которых видео выглядит как презентация.",
+  errs:[
+    ["Графика на лице","Зритель теряет контакт с вами и пролистывает.","Графика в верхней трети или сбоку, лицо видно всегда."],
+    ["Анимации «по секундам»","Графика живёт своей жизнью, речь — своей.","Каждое появление привязано к началу слова из words.json."],
+    ["Вставки наугад","Видео из broll/ появляются не к месту.","Называйте файлы по смыслу и дайте подсказки по моментам в промпте."],
+    ["Текст за краем","Интерфейс Reels закрывает подписи и субтитры.","Безопасная зона: сверху 250 px, снизу 400 px, подписи от 48 px."],
+    ["Тишина под графикой","Картинка двигается, а уху не за что зацепиться.","Звук на каждое появление и переход, музыка тихо под голосом."]
+  ],
+  fixWord:"Лучше:", finalDone:"Собрала свой первый ролик",
+  trEy:"Что дальше", trPill:"Курс @ux_kath · старт в январе 2027",
+  trH:"Интеграция ИИ в работу <em>дизайнера, блогера, предпринимателя</em>",
+  trLead:"Соберите бренд, сайт и приложение с помощью ИИ и упакуйте их в посты и видео. Каждую неделю я разбираю ваши работы.",
+  prog:[["Брендинг · 8 недель","Логотип, шрифты, цвета, графические объекты"],["Сайты · 6 недель","Тексты и структура, сборка в коде, публикация"],["Софт / приложения · 10 недель","Исследование, карта пути пользователя, прототип, дизайн, тестирование, разработка"],["SMM и моушн в каждом блоке","Посты, сторис и видео о каждом проекте"],["Разбор работ каждую пятницу","Созвон в 12:00 по Аргентине / 18:00 по Москве"]],
+  pdfEy:"Сохраните себе", pdfH:"Заберите инструкцию с собой", pdfLead:"Чтобы вернуться к промптам и шагам в любой момент — скачайте ту же инструкцию в PDF.", pdfBtn:"Скачать PDF",
+  pdfDeclined:"Скачивание отменено.", pdfFail:"Не получилось скачать здесь — откройте PDF по ссылке.",
+  title:"Профессиональный моушн для видео — 4Kath"
+}
+};
+
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let lang = "ru";
+let doneSet = new Set();
+try { doneSet = new Set(JSON.parse(localStorage.getItem("4k-motion-done") || "[]")); } catch(e) {}
+
+function codeBlock(text, label, L){
+  return `<div class="code"><div class="head"><span>${esc(label||"")}</span><button type="button" class="copy">${L.copy}</button></div><pre>${esc(text)}</pre></div>`;
+}
+function doneBtn(id, label){
+  const on = doneSet.has(id);
+  return `<button type="button" class="done" data-step="${id}" aria-pressed="${on}"><i></i><span>${label}</span></button>`;
+}
+
+function render(){
+  const L = T[lang];
+  document.documentElement.lang = lang;
+  document.title = L.title;
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L[el.dataset.t]; });
+  document.querySelectorAll("[data-h]").forEach(el => { el.innerHTML = L[el.dataset.h]; });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+
+  $("#stats").innerHTML = L.stats.map(([n,t]) => `<div class="stat"><b>${n}</b><span>${t}</span></div>`).join("");
+  $("#reelList").innerHTML = REELS.map(([f,i]) => `<figure class="reel"><video src="reels/${f}.mp4" poster="reels/${f}.jpg" controls playsinline preload="none"></video><figcaption><b>${L.reels[i][0]}</b>${L.reels[i][1]}</figcaption></figure>`).join("");
+  $("#toc").innerHTML = L.toc.map(([n,t,id],i) => `<li><a href="#${id}"><span>${String(i+1).padStart(2,"0")}</span>${t}</a></li>`).join("");
+  $("#facts").innerHTML = L.facts.map(f => `<li><span>${f}</span></li>`).join("");
+  $("#toolList").innerHTML = L.tools.map(([name,desc,price,url,paid,must]) => {
+    const tag = url ? `a href="${url}" target="_blank" rel="noopener"` : "div";
+    const close = url ? "a" : "div";
+    return `<${tag} class="tool${must?" must":""}"><div class="top"><b>${name}</b><span class="price${paid?" paid":""}">${price}</span></div><p>${desc}</p></${close}>`;
+  }).join("");
+  document.querySelectorAll("[data-code]").forEach(el => { el.outerHTML = `<div data-code="${el.dataset.code}">${codeBlock(L[el.dataset.code], L.codeLabel, L)}</div>`; });
+  $("#howList").innerHTML = L.how.map(h => `<li>${h}</li>`).join("");
+
+  $("#stepList").innerHTML = L.steps.map((s,i) => {
+    const n = String(i+1).padStart(2,"0");
+    let html = `<article class="step" id="step-${i+1}"><div class="num" aria-hidden="true">${n}</div><div class="stack">`;
+    html += `<span class="eyebrow">${i+1} ${L.stepOf}</span><h3>${s.h}${s.opt?`<span class="opt">${L.optional}</span>`:""}</h3>`;
+    html += (s.body||[]).map(p => `<p class="prose">${p}</p>`).join("");
+    if (s.tips) html += `<ul class="tips">${s.tips.map(t=>`<li>${t}</li>`).join("")}</ul>`;
+    if (s.code) html += codeBlock(s.code, "", L);
+    if (s.mid) html += `<p class="prose">${s.mid}</p>`;
+    if (s.code2) html += codeBlock(s.code2, "", L);
+    if (s.note) html += `<div class="note"><p>${s.note}</p></div>`;
+    html += (s.after||[]).map(p => `<p class="prose">${p}</p>`).join("");
+    html += doneBtn("s"+(i+1), L.done) + `</div></article>`;
+    return html;
+  }).join("");
+
+  $("#errList").innerHTML = L.errs.map(([h,p,f]) => `<li class="err"><h3>${h}</h3><p>${p}</p><p class="fix"><b>${L.fixWord}</b> ${f}</p></li>`).join("");
+  const fin = $('[data-step="final"]'); fin.setAttribute("aria-pressed", doneSet.has("final"));
+  $("#progList").innerHTML = L.prog.map(([b,p],i)=>`<li><span>${String(i+1).padStart(2,"0")}</span><div><b>${b}</b><p>${p}</p></div></li>`).join("");
+  $("#pdfBtn").href = "pdf/4kath-motion-ru.pdf";
+  $("#pdfMsg").hidden = true;
+}
+
+document.addEventListener("click", async e => {
+  const lb = e.target.closest(".langs button");
+  if (lb){ return; }
+
+  const cp = e.target.closest(".copy");
+  if (cp){
+    const pre = cp.closest(".code").querySelector("pre");
+    const L = T[lang];
+    const ok = () => { cp.textContent = L.copied; cp.classList.add("ok"); setTimeout(()=>{ cp.textContent = L.copy; cp.classList.remove("ok"); }, 1600); };
+    try { await navigator.clipboard.writeText(pre.textContent); ok(); }
+    catch(err){ const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    return;
+  }
+
+  const db = e.target.closest(".done");
+  if (db){
+    const id = db.dataset.step;
+    doneSet.has(id) ? doneSet.delete(id) : doneSet.add(id);
+    db.setAttribute("aria-pressed", doneSet.has(id));
+    try{ localStorage.setItem("4k-motion-done", JSON.stringify([...doneSet])); }catch(err){}
+    return;
+  }
+});
+
+render();
+</script>
+
+</body></html>
