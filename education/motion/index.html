@@ -188,6 +188,8 @@ a.tool:hover{background:var(--tint)}
 .tr-cta{display:flex;flex-wrap:wrap;gap:10px}
 .btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
 .btn.line:hover{background:rgba(255,255,255,.12)}
+/* links written out in full: shown only in the PDF / print, where the buttons are hidden */
+.print-links{display:none}
 .train .btn:focus-visible,.code .copy:focus-visible{outline-color:#fff}
 /* the first word of the title was cut off on phones at 40px */
 @media (max-width:480px){.hero h1{font-size:clamp(28px,8.6vw,40px)}}
@@ -219,12 +221,14 @@ footer a:hover{color:#fff}
   .btn:hover{transform:translateY(-1px)}
 }
 @media print{
-  .bar,.done,.copy,.pdf,.train .btn,.soon,body::before{display:none!important}
+  .bar,.done,.copy,.pdf,.train .btn,.tr-cta,.soon,body::before{display:none!important}
   section{break-inside:auto;padding-block:28px}
   .step,.tool,.err,.code,.note,.prog li{break-inside:avoid}
   .hero .wrap{padding-block:24px 40px}
   .code pre{white-space:pre-wrap}
   body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .print-links{display:grid;gap:6px;margin:0;padding:18px 20px;list-style:none;border-radius:20px;background:#fff;color:var(--ink);font-size:15px}
+  .print-links a{color:var(--blue);text-decoration:underline}
 }
 </style>
 </head>
@@ -289,6 +293,13 @@ footer a:hover{color:#fff}
     <div class="sec-head" style="margin:0"><span class="eyebrow" data-t="trEy"></span><span class="pill" data-t="trPill"></span><h2 data-h="trH"></h2><p class="lead" data-t="trLead"></p></div>
     <ol class="prog" id="progList"></ol>
     <div class="tr-cta"><a class="btn white" href="/education/#program">Программа курса →</a><a class="btn line" href="/education/#pricing">Тарифы</a><a class="btn line" href="/education/#webinar">Бесплатный вебинар</a></div>
+    <div class="tr-cta"><a class="btn line" href="https://t.me/studio4kath" target="_blank" rel="noopener">Telegram-канал @studio4kath</a><a class="btn line" href="https://t.me/uxkath_bot" target="_blank" rel="noopener">Бот @uxkath_bot</a></div>
+    <ul class="print-links">
+      <li>Курс: <a href="https://4kath.com/education/">4kath.com/education</a></li>
+      <li>Telegram-канал: <a href="https://t.me/studio4kath">t.me/studio4kath</a></li>
+      <li>Бот: <a href="https://t.me/uxkath_bot">t.me/uxkath_bot</a></li>
+      <li>Этот урок онлайн: <a href="https://4kath.com/education/motion/">4kath.com/education/motion</a></li>
+    </ul>
   </div></section>
 
   <section class="pdf" id="pdf"><div class="wrap">
@@ -305,6 +316,8 @@ footer a:hover{color:#fff}
     <a href="https://4kath.com" target="_blank" rel="noopener">4kath.com</a>
     <a href="https://instagram.com/4kath_design" target="_blank" rel="noopener">@4kath_design</a>
     <a href="https://www.behance.net/4kath" target="_blank" rel="noopener">Behance</a>
+    <a href="https://t.me/studio4kath" target="_blank" rel="noopener">Telegram @studio4kath</a>
+    <a href="https://t.me/uxkath_bot" target="_blank" rel="noopener">Бот @uxkath_bot</a>
     <span>4kath.studio@gmail.com</span>
   </div>
 </div></footer>
