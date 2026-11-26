@@ -6,8 +6,14 @@
 <title>Профессиональный моушн для ваших видео — бесплатный урок 4Kath</title>
 <meta name="description" content="Снимаете себя на телефон — Claude накладывает графику точно по словам. Без After Effects и ключевых кадров: что снять, что открыть и готовый промпт.">
 <link rel="canonical" href="https://4kath.com/education/motion/">
+<link rel="alternate" hreflang="ru" href="https://4kath.com/education/motion/?lang=ru">
+<link rel="alternate" hreflang="en" href="https://4kath.com/education/motion/?lang=en">
+<link rel="alternate" hreflang="es" href="https://4kath.com/education/motion/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://4kath.com/education/motion/?lang=ru">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_LA">
 <meta property="og:site_name" content="4Kath">
 <meta property="og:url" content="https://4kath.com/education/motion/">
 <meta property="og:title" content="Профессиональный моушн для ваших видео — бесплатный урок 4Kath">
@@ -188,6 +194,8 @@ a.tool:hover{background:var(--tint)}
 .tr-cta{display:flex;flex-wrap:wrap;gap:10px}
 .btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.7)}
 .btn.line:hover{background:rgba(255,255,255,.12)}
+/* EN/ES only: the course itself is taught in Russian; sits as a caption under the course buttons */
+.course-lang{margin-top:-16px;font-size:13px;line-height:1.4;color:#E6E8FF}
 /* links written out in full: shown only in the PDF / print, where the buttons are hidden */
 .print-links{display:none}
 .train .btn:focus-visible,.code .copy:focus-visible{outline-color:#fff}
@@ -229,13 +237,16 @@ footer a:hover{color:#fff}
   body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .print-links{display:grid;gap:6px;margin:0;padding:18px 20px;list-style:none;border-radius:20px;background:#fff;color:var(--ink);font-size:15px}
   .print-links a{color:var(--blue);text-decoration:underline}
+  .course-lang{margin-top:0}
+  /* flex instead of grid so the contents list can break across pages (ES pushed the whole grid to page 2) */
+  .toc{display:flex;flex-wrap:wrap}.toc li{flex:0 0 calc(50% - 4px)}
 }
 </style>
 </head>
 <body>
 <div class="bar"><div class="wrap">
   <a class="logo" href="#top"><span>4<b>Kath</b></span><small data-t="barNote"></small></a>
-  <div class="langs" role="group" aria-label="Language" hidden>
+  <div class="langs" role="group" aria-label="Language">
     <button type="button" data-lang="ru" aria-pressed="true">RU</button>
     <button type="button" data-lang="es" aria-pressed="false">ES</button>
     <button type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -292,13 +303,14 @@ footer a:hover{color:#fff}
   <section class="train" id="training"><div class="wrap">
     <div class="sec-head" style="margin:0"><span class="eyebrow" data-t="trEy"></span><span class="pill" data-t="trPill"></span><h2 data-h="trH"></h2><p class="lead" data-t="trLead"></p></div>
     <ol class="prog" id="progList"></ol>
-    <div class="tr-cta"><a class="btn white" href="/education/#program">Программа курса →</a><a class="btn line" href="/education/#pricing">Тарифы</a><a class="btn line" href="/education/#webinar">Бесплатный вебинар</a></div>
-    <div class="tr-cta"><a class="btn line" href="https://t.me/studio4kath" target="_blank" rel="noopener">Telegram-канал @studio4kath</a><a class="btn line" href="https://t.me/uxkath_bot" target="_blank" rel="noopener">Бот @uxkath_bot</a></div>
+    <div class="tr-cta"><a class="btn white" href="/education/#program" data-t="ctaProgram">Программа курса →</a><a class="btn line" href="/education/#pricing" data-t="ctaPricing">Тарифы</a><a class="btn line" href="/education/#webinar" data-t="ctaWebinar">Бесплатный вебинар</a></div>
+    <p class="course-lang" data-t="courseLang" hidden></p>
+    <div class="tr-cta"><a class="btn line" href="https://t.me/studio4kath" target="_blank" rel="noopener" data-t="ctaChannel">Telegram-канал @studio4kath</a><a class="btn line" href="https://t.me/uxkath_bot" target="_blank" rel="noopener" data-t="ctaBot">Бот @uxkath_bot</a></div>
     <ul class="print-links">
-      <li>Курс: <a href="https://4kath.com/education/">4kath.com/education</a></li>
-      <li>Telegram-канал: <a href="https://t.me/studio4kath">t.me/studio4kath</a></li>
-      <li>Бот: <a href="https://t.me/uxkath_bot">t.me/uxkath_bot</a></li>
-      <li>Этот урок онлайн: <a href="https://4kath.com/education/motion/">4kath.com/education/motion</a></li>
+      <li><span data-t="prCourse">Курс:</span> <a href="https://4kath.com/education/">4kath.com/education</a></li>
+      <li><span data-t="prChannel">Telegram-канал:</span> <a href="https://t.me/studio4kath">t.me/studio4kath</a></li>
+      <li><span data-t="prBot">Бот:</span> <a href="https://t.me/uxkath_bot">t.me/uxkath_bot</a></li>
+      <li><span data-t="prLesson">Этот урок онлайн:</span> <a id="lessonLink" href="https://4kath.com/education/motion/">4kath.com/education/motion</a></li>
     </ul>
   </div></section>
 
@@ -316,8 +328,8 @@ footer a:hover{color:#fff}
     <a href="https://4kath.com" target="_blank" rel="noopener">4kath.com</a>
     <a href="https://instagram.com/4kath_design" target="_blank" rel="noopener">@4kath_design</a>
     <a href="https://www.behance.net/4kath" target="_blank" rel="noopener">Behance</a>
-    <a href="https://t.me/studio4kath" target="_blank" rel="noopener">Telegram @studio4kath</a>
-    <a href="https://t.me/uxkath_bot" target="_blank" rel="noopener">Бот @uxkath_bot</a>
+    <a href="https://t.me/studio4kath" target="_blank" rel="noopener" data-t="footChannel">Telegram @studio4kath</a>
+    <a href="https://t.me/uxkath_bot" target="_blank" rel="noopener" data-t="footBot">Бот @uxkath_bot</a>
     <span>4kath.studio@gmail.com</span>
   </div>
 </div></footer>
@@ -423,13 +435,384 @@ ru:{
   prog:[["Брендинг · 8 недель","Логотип, шрифты, цвета, графические объекты"],["Сайты · 6 недель","Тексты и структура, сборка в коде, публикация"],["Софт / приложения · 10 недель","Исследование, карта пути пользователя, прототип, дизайн, тестирование, разработка"],["SMM и моушн в каждом блоке","Посты, сторис и видео о каждом проекте"],["Разбор работ каждую пятницу","Созвон в 12:00 по Аргентине / 18:00 по Москве"]],
   pdfEy:"Сохраните себе", pdfH:"Заберите инструкцию с собой", pdfLead:"Чтобы вернуться к промптам и шагам в любой момент — скачайте ту же инструкцию в PDF.", pdfBtn:"Скачать PDF",
   pdfDeclined:"Скачивание отменено.", pdfFail:"Не получилось скачать здесь — откройте PDF по ссылке.",
-  title:"Профессиональный моушн для видео — 4Kath"
+  ctaProgram:"Программа курса →", ctaPricing:"Тарифы", ctaWebinar:"Бесплатный вебинар",
+  courseLang:"",
+  ctaChannel:"Telegram-канал @studio4kath", ctaBot:"Бот @uxkath_bot",
+  prCourse:"Курс:", prChannel:"Telegram-канал:", prBot:"Бот:", prLesson:"Этот урок онлайн:",
+  footChannel:"Telegram @studio4kath", footBot:"Бот @uxkath_bot",
+  headTitle:"Профессиональный моушн для ваших видео — бесплатный урок 4Kath",
+  metaDescription:"Снимаете себя на телефон — Claude накладывает графику точно по словам. Без After Effects и ключевых кадров: что снять, что открыть и готовый промпт.",
+  ogLocale:"ru_RU"
+},
+/* ======================= ES ======================= */
+es:{
+  reelsEy:"Resultado",
+  reelsH:"Esto es lo que vas a lograr",
+  reelsLead:"Los cinco videos se hicieron así: video del celular, gráficos sincronizados con las palabras, cero keyframes a mano.",
+  reels:[
+    ["Colágeno: 3 tipos","Video educativo: esquemas e íconos en cada palabra"],
+    ["IA en 5 minutos vs diseñadora en 72 horas","Cara a cámara en inglés y comparación de sitios"],
+    ["Beauty Blend","Experta en cámara, beneficios en etiquetas"],
+    ["No contrates desarrolladores","Cara a cámara, diseños y precio sobre el video"],
+    ["Caso Unknown","Identidad de marca en formato dinámico"]
+  ],
+  barNote:"Prompt · Guía",
+  heroPill:"Del reel sobre motion",
+  h1:"Motion profesional para tus videos, <em>que retiene la atención</em>",
+  heroLead:"Te grabás con el celular y Claude pone los gráficos justo sobre cada palabra. Sin After Effects ni keyframes: qué grabar, qué abrir y el prompt listo.",
+  stats:[["1","prompt principal"],["7","pasos de la grabación al video"],["0","keyframes a mano"]],
+  promise:"«¿Querés el prompt con el que empiezo estos gráficos? Comentá „motion“ y te paso el prompt y la guía para armar un trabajo igual.»",
+  promiseSrc:"Lo prometí en el reel — acá está.",
+  intro:[
+    "La idea es simple: Claude no dibuja el video, lo escribe con código. Cada texto, línea y transición es una fórmula del tiempo, y Remotion convierte ese código en un MP4 común.",
+    "<strong>La base del video sos vos en cámara.</strong> Grabás tu cara hablando con el texto exacto, y Claude pone los gráficos justo sobre cada palabra e inserta tus videos extra donde corresponden.",
+    "Abajo va todo paso a paso. El primer video te lleva una tarde; después, mucho menos."
+  ],
+  routeEy:"Ruta",
+  routeH:"Qué te llevás",
+  toc:[
+    ["01","Mirá lo que vas a lograr","reels"],
+    ["02","Sin sorpresas: qué necesitás para empezar","honest"],
+    ["03","3 herramientas clave y extras","tools"],
+    ["04","El prompt con el que empieza cada video","prompt"],
+    ["05","Del video del celular al reel en 7 pasos","steps"],
+    ["06","5 errores que hacen que pasen de largo","mistakes"],
+    ["07","Qué sigue: el curso «Integración de IA en el trabajo de diseñadores, creadores de contenido y emprendedores»","training"],
+    ["08","Llevate la guía","pdf"]
+  ],
+  honestEy:"Siendo honestos",
+  honestH:"Sin sorpresas: qué necesitás para empezar",
+  facts:[
+    "<strong>Claude Code es pago.</strong> Está incluido en Claude Pro — desde $17 por mes con pago anual — y en los planes Max. En el plan gratis no está.",
+    "<strong>Remotion es gratis para creadores.</strong> Personas y equipos de hasta 3 personas pueden hacer videos gratis, incluso comerciales. Empresas más grandes necesitan la Company License paga.",
+    "<strong>Necesitás una computadora.</strong> Mac, Windows o Linux. Renderizar un video de 60 segundos en una laptop común lleva unos minutos.",
+    "<strong>El criterio sigue siendo tuyo.</strong> Claude escribe el código y hace los cambios, pero vos decidís qué queda y qué se rehace. Sin ajustes, la primera versión suele parecer una presentación."
+  ],
+  toolsEy:"Herramientas",
+  toolsH:"3 herramientas clave y extras",
+  toolsLead:"Las tres primeras son obligatorias; el resto, según el caso.",
+  tools:[
+    ["Claude Code","Escribe los gráficos con código y los ajusta según lo que le pidas","pago","https://claude.com/claude-code",1,1],
+    ["Remotion","Video en React: código → cuadros → MP4, vista previa en el navegador","gratis","https://www.remotion.dev",0,1],
+    ["Node.js (LTS)","Necesario para que funcione Remotion","gratis","https://nodejs.org/en",0,1],
+    ["faster-whisper","Transcripción con el tiempo de cada palabra, en tu computadora","gratis","https://github.com/SYSTRAN/faster-whisper",0,0],
+    ["FFmpeg","Cortar pausas y tomas repetidas, mezclar audio, preparar el video","gratis","https://ffmpeg.org",0,0],
+    ["CapCut o Edits","Recortar el video rápido en el celular, si sabés — opcional","gratis","https://www.capcut.com",0,0],
+    ["VS Code","Ver los archivos del proyecto — opcional","gratis","https://code.visualstudio.com",0,0],
+    ["Google Fonts","Tipografías con licencia libre OFL","gratis","https://fonts.google.com",0,0],
+    ["StreamBeats","Música que podés monetizar, sin dar crédito","gratis","https://streambeats.com/licensing",0,0],
+    ["Celular, trípode, luz","Para grabarte hablando: luz de ventana o una lámpara de frente","propio","",0,0]
+  ],
+  promptEy:"La base del video",
+  promptH:"El prompt con el que empieza cada video",
+  whyH:"Para qué sirve",
+  why:"Si solo escribís «hacé una animación linda», vas a tener diapositivas con fundidos encima de tu cara. Este prompt define de entrada lo que hace que el video se sienta vivo: gráficos sincronizados con las palabras, cuidado de tu cara en el cuadro, inserts de tus materiales, transiciones de cámara y sonido.",
+  codeLabel:"Prompt para Claude Code — copiá y pegá",
+  mainPrompt:`Sos motion designer y desarrollador en Remotion. Armá en esta carpeta un video: mi video hablando a cámara es la base y tus gráficos van encima.
+
+Datos:
+– video principal: [nombre del archivo, por ejemplo talking.mp4]
+– texto del video: [pegá el texto completo, tal cual lo digo]
+– el video ya está recortado: [sí / no — si no, cortá vos las pausas y repeticiones]
+– materiales extra: carpeta [broll/], archivos nombrados según su contenido
+– pistas para los inserts (opcional): [figma-screen.mp4 — cuando hablo del diseño; client-logo.png — cuando nombro al cliente]
+– formato: [1080×1920, vertical para Reels]
+– etiquetas: [blancas #FFFFFF], texto: [#060A1A], acento: [azul #2F3CFF]
+– tipografía: [Evolventa o cualquiera de Google Fonts]
+
+Qué hacer:
+1. Transcribí la voz localmente con faster-whisper con el tiempo de cada palabra y guardalo en words.json. Sincronizá todos los gráficos con el inicio de las palabras, no con «segundos aproximados».
+2. Si el video no está recortado, buscá pausas de más de 0,6 segundos y tomas fallidas (repetí la frase después de una pausa), cortalas con FFmpeg y dejá los mejores intentos. No toques el original, guardá un archivo nuevo.
+3. Mi cara hablando es la capa principal. Los gráficos no tapan la cara: ponelos en el tercio superior o a un costado. Todo el texto va dentro de la zona segura de Reels: 250 px libres arriba y 400 px abajo.
+4. Dividí el video en escenas por sentido: escena nueva cada 3–6 segundos, un evento visual nuevo cada 1,5–2 segundos.
+5. Revisá los archivos de broll/: por el nombre y por los cuadros entendé qué hay en cada uno. Insertalos donde hablo de lo mismo, a pantalla completa durante 2–4 segundos o en una ventana sobre el cuadro. Mi voz sigue sonando. Tené en cuenta mis pistas. Lo que no encaje, no lo uses.
+6. Creá un único personaje que atraviese todo el video: un punto o una línea del color de acento. Subraya palabras clave, dibuja flechas y lleva la mirada a la siguiente escena.
+7. Transiciones con movimiento de cámara: zoom a la cara, barrido con desenfoque, desplazamiento. Nada de fundidos simples.
+8. 2–3 veces en el video, un golpe a pantalla completa: una palabra grande sobre fondo del color de acento.
+9. Mostrá el sentido, no repitas lo que digo. Digo «sitio» — mostrá una ventana del navegador; digo «en 72 horas» — un temporizador.
+10. Agregá subtítulos por palabra: 2–4 palabras en pantalla, la palabra clave resaltada con el acento, mínimo 48 px.
+11. Sonido: clic en cada aparición, whoosh en cada transición, golpe en las palabras grandes. Música 12–18 dB por debajo de la voz.
+
+Cuando termines, abrí la vista previa en Remotion Studio y mandame la lista de escenas con los segundos y qué archivos de broll/ pusiste y dónde. Después esperá mis cambios.`,
+  howH:"Cómo usarlo",
+  how:[
+    "Pegalo en Claude Code dentro de la carpeta del proyecto (paso 6).",
+    "Reemplazá todo lo que está entre corchetes: archivos, texto, pistas, formato, colores y tipografía.",
+    "Escribí los colores en código hex: así Claude no confunde el tono."
+  ],
+  getH:"Qué vas a tener",
+  get:"Un proyecto de Remotion listo: tu video, gráficos sincronizados, inserts de broll/, subtítulos y sonido. Solo queda mirar la vista previa y pedir cambios con palabras.",
+  stepsEy:"Guía",
+  stepsH:"Del video del celular al reel en 7 pasos",
+  stepOf:"de 7",
+  optional:"opcional",
+  done:"Paso hecho",
+  copy:"Copiar",
+  copied:"Copiado",
+  steps:[
+    {h:"Instalá Claude Code", body:["Instalalo con la guía oficial e iniciá sesión en tu cuenta de Claude con Pro o Max. En Mac y Linux alcanza con un comando en la Terminal:"], code:"curl -fsSL https://claude.ai/install.sh | bash", after:["Para Windows, la guía está en la página de Claude Code. Después, todos los comandos los ejecuta Claude por vos."]},
+    {h:"Grabate hablando a cámara", body:["Primero el texto, después la grabación. Decí <strong>exactamente el texto</strong> que vas a pegar en el prompt: así Claude sincroniza mejor los gráficos con las palabras."], tips:[
+      "Celular vertical en trípode, cámara a la altura de los ojos.",
+      "Luz de frente: ventana de día o una lámpara. Lugar silencioso o micrófono corbatero.",
+      "Dejá un poco de espacio arriba de la cabeza: ahí van los gráficos.",
+      "Si te equivocás, quedate 2 segundos en silencio y repetí la frase desde el principio. Por las pausas, Claude encuentra y corta las tomas fallidas."
+    ]},
+    {h:"Recortá el video", opt:1, body:[
+      "Si sabés, recortalo en CapCut o Edits: sacá pausas, repeticiones, inicio y final. <strong>Sin subtítulos, efectos ni música</strong> — eso lo hace Claude. Exportá en 1080×1920, 30 cuadros por segundo."
+    ], note:"Si no querés o no sabés, salteá este paso. En el prompt poné «el video no está recortado» y Claude corta las pausas y repeticiones con FFmpeg."},
+    {h:"Prepará los materiales extra", body:[
+      "Si tenés otros videos — grabaciones de pantalla, tomas de tu trabajo, fotos, logos — guardalos antes en la carpeta <strong>broll/</strong>. Nombrá los archivos según su contenido: Claude mira el nombre y los cuadros y decide solo dónde superponer cada uno."
+    ], code:`broll/
+  laptop-typing.mp4
+  figma-screen.mp4
+  site-before-after.mp4
+  client-logo.png
+  team-photo.jpg`, after:["¿Querés un insert en un momento puntual? Sumá una pista al prompt: «figma-screen.mp4 — cuando hablo del diseño». Si no tenés materiales, no pasa nada: Claude arma los gráficos sin ellos."]},
+    {h:"Prepará el proyecto", body:["Creá una carpeta para el proyecto y poné ahí el video principal y la carpeta broll/. Abrí Claude Code en esa carpeta y pegá:"], code:"Revisá si tengo Node.js y FFmpeg instalados; si no, instalalos. Después creá en esta carpeta un proyecto de Remotion con npx create-video@latest (plantilla Blank), mové mi video y la carpeta broll/ a public/ y contame en pocas palabras qué quedó."},
+    {h:"Pegá el prompt principal", body:["El de arriba, con tu texto, archivos, pistas, colores y formato. Claude transcribe la voz, revisa los materiales de broll/, divide el video en escenas y arma los gráficos sobre tu video."]},
+    {h:"Ajustá con palabras y renderizá", body:["La vista previa se abre en el navegador (Remotion Studio). Mirá, pausá y escribí los cambios con palabras normales, indicando el segundo:"], code:`En el segundo 12 el gráfico tapa mi cara — subilo.
+Insertá figma-screen.mp4 en el segundo 20, cuando digo «diseño».
+Sacá el insert laptop-typing.mp4, no tiene que ver.
+Hacé los subtítulos más grandes y resaltá la palabra «gratis».
+Cambiá el acento a #2F3CFF.`, mid:"Cuando todo te guste:", code2:"Renderizá el final en MP4 (H.264), 1080×1920, 30 fps. Revisá el audio: pico no mayor a −1 dB, música 12–18 dB por debajo de la voz.", after:["El archivo final se puede subir directo a Reels, Shorts y TikTok."]}
+  ],
+  errEy:"Errores comunes",
+  errH:"5 errores que hacen que pasen de largo",
+  errLead:"Cinco errores que hacen que el video parezca una presentación.",
+  errs:[
+    ["Gráficos sobre la cara","Se pierde el contacto con vos y la gente pasa de largo.","Gráficos en el tercio superior o a un costado; la cara siempre visible."],
+    ["Animaciones «por segundos»","Los gráficos van por un lado y la voz por otro.","Cada aparición sincronizada con el inicio de una palabra de words.json."],
+    ["Inserts al azar","Los videos de broll/ aparecen fuera de lugar.","Nombrá los archivos según su contenido y dejá pistas en el prompt."],
+    ["Texto en el borde","La interfaz de Reels tapa textos y subtítulos.","Zona segura: 250 px arriba, 400 px abajo, textos de 48 px o más."],
+    ["Silencio bajo los gráficos","La imagen se mueve pero el oído no tiene de qué agarrarse.","Sonido en cada aparición y transición, música suave bajo la voz."]
+  ],
+  fixWord:"Mejor:",
+  finalDone:"Armé mi primer video",
+  trEy:"Qué sigue",
+  trPill:"Curso de @ux_kath · empieza en enero de 2027",
+  trH:"Integración de IA en el trabajo <em>de diseñadores, creadores de contenido y emprendedores</em>",
+  trLead:"Armá una marca, un sitio y una app con IA y presentalos en posts y videos. Cada semana reviso tus trabajos.",
+  prog:[
+    ["Branding · 8 semanas","Logo, tipografías, colores, elementos gráficos"],
+    ["Sitios web · 6 semanas","Textos y estructura, armado en código, publicación"],
+    ["Software / apps · 10 semanas","Investigación, mapa del recorrido del usuario, prototipo, diseño, testeo, desarrollo"],
+    ["SMM y motion en cada bloque","Posts, historias y videos sobre cada proyecto"],
+    ["Revisión de trabajos todos los viernes","Videollamada los viernes a las 12:00 de Argentina / 18:00 de Moscú"]
+  ],
+  pdfEy:"Guardala",
+  pdfH:"Llevate la guía",
+  pdfLead:"Para volver a los prompts y pasos cuando quieras, descargá la misma guía en PDF.",
+  pdfBtn:"Descargar PDF",
+  pdfDeclined:"Descarga cancelada.",
+  pdfFail:"No se pudo descargar acá: abrí el PDF desde el enlace.",
+  ctaProgram:"Programa del curso →",
+  ctaPricing:"Precios",
+  ctaWebinar:"Webinar gratis",
+  courseLang:"El curso es en ruso.",
+  ctaChannel:"Canal de Telegram @studio4kath",
+  ctaBot:"Bot @uxkath_bot",
+  prCourse:"Curso:",
+  prChannel:"Canal de Telegram:",
+  prBot:"Bot:",
+  prLesson:"Esta clase online:",
+  footChannel:"Telegram @studio4kath",
+  footBot:"Bot @uxkath_bot",
+  headTitle:"Motion profesional para tus videos — clase gratis de 4Kath",
+  metaDescription:"Te grabás con el celular y Claude pone los gráficos justo sobre cada palabra. Sin After Effects ni keyframes: qué grabar, qué abrir y el prompt listo.",
+  ogLocale:"es_LA"
+},
+/* ======================= EN ======================= */
+en:{
+  reelsEy:"The result",
+  reelsH:"Here’s what you’ll make",
+  reelsLead:"All five videos were made this way: phone footage, graphics timed to words, zero keyframes by hand.",
+  reels:[
+    ["Collagen: 3 types","Educational video: diagrams and icons on every word"],
+    ["AI in 5 minutes vs a designer in 72 hours","Talking head in English and a side-by-side of two sites"],
+    ["Beauty Blend","Expert on camera, product benefits on labels"],
+    ["Don’t hire developers","Talking head with layouts and price on top"],
+    ["Unknown case","Brand identity, shown with pace"]
+  ],
+  barNote:"Prompt · Guide",
+  heroPill:"From the motion reel",
+  h1:"Pro motion graphics for your videos <em>that hold attention</em>",
+  heroLead:"Film yourself on your phone and Claude lays graphics on top, timed to every word. No After Effects, no keyframes: what to film, what to open and a ready prompt.",
+  stats:[["1","main prompt"],["7","steps from filming to video"],["0","keyframes by hand"]],
+  promise:"“Want the prompt I start these graphics with? Comment ‘motion’ and I’ll send you the prompt and a guide to build the same thing.”",
+  promiseSrc:"Promised in the reel — here it is.",
+  intro:[
+    "The idea is simple: Claude doesn’t draw the video, it writes it in code. Every caption, line and transition is a formula of time, and Remotion turns that code into a regular MP4.",
+    "<strong>You on camera are the base of the video.</strong> You film yourself saying the exact script, and Claude lays graphics on top word by word and drops your extra clips in where they fit.",
+    "Everything is below, step by step. Your first video takes an evening; after that it gets faster."
+  ],
+  routeEy:"Route",
+  routeH:"What you’ll get",
+  toc:[
+    ["01","See what you’ll make","reels"],
+    ["02","No surprises: what you need to start","honest"],
+    ["03","3 must-have tools and extras","tools"],
+    ["04","The prompt every video starts with","prompt"],
+    ["05","From phone video to reel in 7 steps","steps"],
+    ["06","5 mistakes that make people scroll past","mistakes"],
+    ["07","What’s next: AI Integration at Work, a course for designers, creators and entrepreneurs","training"],
+    ["08","Take the guide with you","pdf"]
+  ],
+  honestEy:"Straight up",
+  honestH:"No surprises: what you need to start",
+  facts:[
+    "<strong>Claude Code is paid.</strong> It comes with Claude Pro — from $17 a month billed yearly — and with the Max plans. It’s not on the free plan.",
+    "<strong>Remotion is free for creators.</strong> Individuals and teams of up to 3 people can make videos for free, commercial ones included. Bigger companies need a paid Company License.",
+    "<strong>You need a computer.</strong> Mac, Windows or Linux. Rendering a 60-second video on a regular laptop takes a few minutes.",
+    "<strong>Taste is still yours.</strong> Claude writes the code and makes the changes, but you decide what stays and what gets redone. Without edits, the first version usually looks like slides."
+  ],
+  toolsEy:"Tools",
+  toolsH:"3 must-have tools and extras",
+  toolsLead:"The first three are required; the rest depends on the video.",
+  tools:[
+    ["Claude Code","Writes the graphics in code and edits them from your words","paid","https://claude.com/claude-code",1,1],
+    ["Remotion","Video in React: code → frames → MP4, preview in the browser","free","https://www.remotion.dev",0,1],
+    ["Node.js (LTS)","Needed to run Remotion","free","https://nodejs.org/en",0,1],
+    ["faster-whisper","Transcribes speech with the timing of every word, on your computer","free","https://github.com/SYSTRAN/faster-whisper",0,0],
+    ["FFmpeg","Cuts pauses and retakes, mixes audio, prepares the video","free","https://ffmpeg.org",0,0],
+    ["CapCut or Edits","Quick trim on your phone if you know how — optional","free","https://www.capcut.com",0,0],
+    ["VS Code","Browse the project files — optional","free","https://code.visualstudio.com",0,0],
+    ["Google Fonts","Fonts under the free OFL license","free","https://fonts.google.com",0,0],
+    ["StreamBeats","Music you can monetize, no credit needed","free","https://streambeats.com/licensing",0,0],
+    ["Phone, tripod, light","To film your talking head: window light or a lamp in front of you","your own","",0,0]
+  ],
+  promptEy:"The core of the video",
+  promptH:"The prompt every video starts with",
+  whyH:"Why you need it",
+  why:"If you just write “make a nice animation”, you’ll get slides with fades over your face. This prompt sets up what makes a video feel alive from the start: graphics timed to words, respect for your face in the frame, inserts from your own footage, camera-move transitions and sound.",
+  codeLabel:"Prompt for Claude Code — copy and paste",
+  mainPrompt:`You are a motion designer and Remotion developer. Build a video in this folder: my talking-head video is the base, your graphics go on top.
+
+Inputs:
+– main video: [file name, e.g. talking.mp4]
+– script: [paste the full text, exactly as I say it]
+– video already trimmed: [yes / no — if no, cut the pauses and retakes yourself]
+– extra footage: folder [broll/], files named by what’s in them
+– insert hints (optional): [figma-screen.mp4 — when I talk about the layout; client-logo.png — when I name the client]
+– format: [1080×1920, vertical for Reels]
+– labels: [white #FFFFFF], text: [#060A1A], accent: [blue #2F3CFF]
+– font: [Evolventa or any Google Font]
+
+What to do:
+1. Transcribe the speech locally with faster-whisper, with the timing of every word, and save it as words.json. Tie every graphic to the start of a word, not to “roughly this second”.
+2. If the video isn’t trimmed, find pauses longer than 0.6 seconds and failed retakes (I repeated the line after a pause), cut them with FFmpeg and keep the best takes. Don’t touch the original; save a new file.
+3. The talking head is the main layer. Graphics never cover the face: keep them in the top third or to the side. All text stays inside the Reels safe zone: leave 250 px free at the top and 400 px at the bottom.
+4. Split the video into scenes by meaning: a new scene every 3–6 seconds, a new visual event every 1.5–2 seconds.
+5. Go through the files in broll/: from the names and the frames, work out what each one shows. Insert them where I talk about the same thing — full screen for 2–4 seconds or as a window over the frame. My voice keeps playing. Follow my insert hints. Don’t use anything that doesn’t fit.
+6. Create one recurring hero — a dot or line in the accent color. It underlines key words, draws arrows and leads the eye into the next scene.
+7. Transitions use camera moves: push in on the face, whip with blur, slide. No plain fades.
+8. 2–3 times per video, a full-screen hit: one big word on an accent-color background.
+9. Show the meaning, don’t repeat my words. I say “website” — show a browser window; I say “in 72 hours” — a timer.
+10. Add word-by-word captions: 2–4 words on screen, the key word highlighted in the accent color, at least 48 px.
+11. Sound: a click on every appearance, a whoosh on every transition, a hit on the big words. Music 12–18 dB below the voice.
+
+When you’re done, open the preview in Remotion Studio and send me the list of scenes with timestamps and which broll/ files you placed where. Then wait for my edits.`,
+  howH:"How to use it",
+  how:[
+    "Paste it into Claude Code inside the project folder (step 6).",
+    "Replace everything in square brackets: files, script, hints, format, colors and font.",
+    "Write colors as hex codes so Claude doesn’t mix up the shade."
+  ],
+  getH:"What you get",
+  get:"A ready Remotion project: your video, graphics timed to words, inserts from broll/, captions and sound. All that’s left is to watch the preview and give edits in plain words.",
+  stepsEy:"Guide",
+  stepsH:"From phone video to reel in 7 steps",
+  stepOf:"of 7",
+  optional:"optional",
+  done:"Step done",
+  copy:"Copy",
+  copied:"Copied",
+  steps:[
+    {h:"Install Claude Code", body:["Install it with the official guide and sign in to your Claude account with Pro or Max. On Mac and Linux, one command in Terminal is enough:"], code:"curl -fsSL https://claude.ai/install.sh | bash", after:["For Windows, the guide is on the Claude Code page. After that, Claude runs every command for you."]},
+    {h:"Film your talking head", body:["Script first, then filming. Say <strong>exactly the text</strong> you’ll paste into the prompt: that way Claude ties the graphics to your words more precisely."], tips:[
+      "Phone vertical on a tripod, camera at eye level.",
+      "Light in front of you: a window in daytime or a lamp. A quiet room or a lav mic.",
+      "Leave some space above your head — that’s where the graphics go.",
+      "Made a mistake? Stay silent for 2 seconds and start the line over. Claude uses those pauses to find and cut the bad takes."
+    ]},
+    {h:"Trim the video", opt:1, body:[
+      "If you know how, trim it in CapCut or Edits: cut pauses, retakes, the start and the end. <strong>No captions, effects or music</strong> — Claude does that. Export at 1080×1920, 30 frames per second."
+    ], note:"Don’t want to or don’t know how? Skip this step. Write “video not trimmed” in the prompt and Claude will cut the pauses and retakes with FFmpeg."},
+    {h:"Gather your extra footage", body:[
+      "If you have other clips — screen recordings, shots of your work, photos, logos — put them in a <strong>broll/</strong> folder beforehand. Name files by what’s in them: Claude looks at the names and the frames and decides where to overlay each one."
+    ], code:`broll/
+  laptop-typing.mp4
+  figma-screen.mp4
+  site-before-after.mp4
+  client-logo.png
+  team-photo.jpg`, after:["Want an insert at a specific moment? Add a hint to the prompt: “figma-screen.mp4 — when I talk about the layout”. No extra footage? That’s fine — Claude builds the graphics without it."]},
+    {h:"Set up the project", body:["Create a project folder and put the main video and the broll/ folder in it. Open Claude Code in that folder and paste:"], code:"Check that I have Node.js and FFmpeg installed; if not, install them. Then create a Remotion project in this folder with npx create-video@latest (Blank template), move my video and the broll/ folder into public/, and tell me briefly what you set up."},
+    {h:"Paste the main prompt", body:[
+      "The one above, with your script, files, hints, colors and format. Claude transcribes the speech, goes through your broll/ footage, splits the video into scenes and builds the graphics over your video."
+    ]},
+    {h:"Edit in words and render", body:["The preview opens in your browser (Remotion Studio). Watch, pause and write edits in plain words, with the second:"], code:`At 0:12 the graphic covers my face — move it higher.
+Insert figma-screen.mp4 at 0:20, when I say “layout”.
+Remove the laptop-typing.mp4 insert, it doesn’t fit.
+Make the captions bigger and highlight the word “free”.
+Change the accent to #2F3CFF.`, mid:"When you like everything:", code2:"Render the final as MP4 (H.264), 1080×1920, 30 fps. Check the audio: peak no higher than −1 dB, music 12–18 dB below the voice.", after:["The final file is ready to upload to Reels, Shorts and TikTok."]}
+  ],
+  errEy:"Common mistakes",
+  errH:"5 mistakes that make people scroll past",
+  errLead:"Five mistakes that make a video look like a slide deck.",
+  errs:[
+    ["Graphics on the face","Viewers lose contact with you and scroll on.","Graphics in the top third or to the side; your face always visible."],
+    ["Animations “by the second”","The graphics live their own life, your speech another.","Every appearance tied to the start of a word from words.json."],
+    ["Random inserts","Clips from broll/ show up in the wrong place.","Name files by what’s in them and give timing hints in the prompt."],
+    ["Text at the edge","The Reels interface covers your captions.","Safe zone: 250 px at the top, 400 px at the bottom, text 48 px or larger."],
+    ["Silence under the graphics","The picture moves but there’s nothing for the ear to catch.","Sound on every appearance and transition, music low under the voice."]
+  ],
+  fixWord:"Better:",
+  finalDone:"I made my first video",
+  trEy:"What’s next",
+  trPill:"@ux_kath course · starts January 2027",
+  trH:"AI Integration at Work <em>for designers, creators and entrepreneurs</em>",
+  trLead:"Build a brand, a website and an app with AI, then package them into posts and videos. Every week I review your work.",
+  prog:[
+    ["Branding · 8 weeks","Logo, fonts, colors, graphic elements"],
+    ["Websites · 6 weeks","Copy and structure, building in code, publishing"],
+    ["Software / apps · 10 weeks","Research, user journey map, prototype, design, testing, development"],
+    ["Social media and motion in every module","Posts, stories and videos about each project"],
+    ["Work reviews every Friday","Call on Fridays at 12:00 Argentina / 18:00 Moscow time"]
+  ],
+  pdfEy:"Keep it",
+  pdfH:"Take the guide with you",
+  pdfLead:"To come back to the prompts and steps anytime, download the same guide as a PDF.",
+  pdfBtn:"Download PDF",
+  pdfDeclined:"Download cancelled.",
+  pdfFail:"Couldn’t download here — open the PDF from the link.",
+  ctaProgram:"Course program →",
+  ctaPricing:"Pricing",
+  ctaWebinar:"Free webinar",
+  courseLang:"The course is taught in Russian.",
+  ctaChannel:"Telegram channel @studio4kath",
+  ctaBot:"Bot @uxkath_bot",
+  prCourse:"Course:",
+  prChannel:"Telegram channel:",
+  prBot:"Bot:",
+  prLesson:"This lesson online:",
+  footChannel:"Telegram @studio4kath",
+  footBot:"Bot @uxkath_bot",
+  headTitle:"Pro motion graphics for your videos — free lesson by 4Kath",
+  metaDescription:"Film yourself on your phone and Claude lays graphics on top, timed to every word. No After Effects, no keyframes: what to film, what to open and a ready prompt.",
+  ogLocale:"en_US"
 }
 };
 
 const $ = (s, r=document) => r.querySelector(s);
 const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-let lang = "ru";
+const BASE_URL = "https://4kath.com/education/motion/";
+// Language: ?lang= → saved choice → ru (browser language is ignored: Russian speakers abroad often have es/en browsers)
+function pickLang(){
+  try { const q = new URLSearchParams(location.search).get("lang"); if (q && T[q]) return q; } catch(e) {}
+  try { const s = localStorage.getItem("4k-motion-lang"); if (s && T[s]) return s; } catch(e) {}
+  return "ru";
+}
+let lang = pickLang();
+const setMeta = (sel, val) => { const m = document.querySelector(sel); if (m) m.setAttribute("content", val); };
 let doneSet = new Set();
 try { doneSet = new Set(JSON.parse(localStorage.getItem("4k-motion-done") || "[]")); } catch(e) {}
 
@@ -444,8 +827,21 @@ function doneBtn(id, label){
 function render(){
   const L = T[lang];
   document.documentElement.lang = lang;
-  document.title = L.title;
+  document.title = L.headTitle;
+  setMeta('meta[name="description"]', L.metaDescription);
+  setMeta('meta[property="og:title"]', L.headTitle);
+  setMeta('meta[property="og:description"]', L.metaDescription);
+  setMeta('meta[property="og:locale"]', L.ogLocale);
+  document.querySelectorAll('meta[property="og:locale:alternate"]').forEach((m, i) => m.setAttribute("content", Object.keys(T).filter(k => k !== lang).map(k => T[k].ogLocale)[i]));
+  const pageUrl = BASE_URL + "?lang=" + lang;
+  const can = document.querySelector('link[rel="canonical"]'); if (can) can.href = pageUrl;
+  setMeta('meta[property="og:url"]', pageUrl);
   document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L[el.dataset.t]; });
+  $(".course-lang").hidden = !L.courseLang;
+  // printed link to the lesson: RU keeps the plain address, EN/ES open in their language
+  const lesson = lang === "ru" ? BASE_URL : pageUrl;
+  $("#lessonLink").href = lesson;
+  $("#lessonLink").textContent = lesson.replace(/^https:\/\//, "").replace(/\/$/, "");
   document.querySelectorAll("[data-h]").forEach(el => { el.innerHTML = L[el.dataset.h]; });
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
 
@@ -479,13 +875,23 @@ function render(){
   $("#errList").innerHTML = L.errs.map(([h,p,f]) => `<li class="err"><h3>${h}</h3><p>${p}</p><p class="fix"><b>${L.fixWord}</b> ${f}</p></li>`).join("");
   const fin = $('[data-step="final"]'); fin.setAttribute("aria-pressed", doneSet.has("final"));
   $("#progList").innerHTML = L.prog.map(([b,p],i)=>`<li><span>${String(i+1).padStart(2,"0")}</span><div><b>${b}</b><p>${p}</p></div></li>`).join("");
-  $("#pdfBtn").href = "pdf/4kath-motion-ru.pdf";
+  $("#pdfBtn").href = `pdf/4kath-motion-${lang}.pdf`;
   $("#pdfMsg").hidden = true;
+  try {
+    const u = new URL(location.href);
+    if (u.searchParams.get("lang") !== lang){ u.searchParams.set("lang", lang); history.replaceState(history.state, "", u); }
+  } catch(e) {}
 }
 
 document.addEventListener("click", async e => {
   const lb = e.target.closest(".langs button");
-  if (lb){ return; }
+  if (lb){
+    if (lb.dataset.lang === lang) return;
+    lang = lb.dataset.lang;
+    try { localStorage.setItem("4k-motion-lang", lang); } catch(err) {}
+    render();
+    return;
+  }
 
   const cp = e.target.closest(".copy");
   if (cp){
